@@ -10,7 +10,14 @@ export const theme = extendTheme({
             400: '#B1FF2E', // main lime (primary)
             600: '#2DB100', // dark lime
             800: '#134B00', // very very dark lime
-            900: '#000000', // black
+        },
+        black: '#000',
+        white: '#fff',
+        blackAlpha: {
+            700: 'rgba(0, 0, 0, 0.64)',
+        },
+        grey: {
+            800: '#1A202C',
         },
     },
     breakpoints: {
