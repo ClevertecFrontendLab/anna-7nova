@@ -6,7 +6,7 @@ import { icons } from './icons';
 
 export const Aside: React.FC = () => (
     <Box
-        position='absolute'
+        position='fixed'
         top='80px'
         as='aside'
         overflowY='auto'

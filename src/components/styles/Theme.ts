@@ -28,11 +28,4 @@ export const theme = extendTheme({
         xl: '1920px',
         '2xl': '1920px',
     },
-    container: {
-        base: '100%',
-        sm: '360px',
-        md: '768px',
-        lg: '1360px',
-        xl: '1360px',
-    },
 });

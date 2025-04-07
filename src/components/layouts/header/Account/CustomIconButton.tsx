@@ -1,15 +1,17 @@
-import { Flex, IconButton, Image, Text } from '@chakra-ui/react';
+import { Flex, IconButton, Text } from '@chakra-ui/react';
 import React from 'react';
+
+import { IconSvg } from '~/assets/images/icons/IconSvg';
 
 type IconButtonPropsType = {
     ariaLabel: string;
-    src: string;
+    iconId: string;
     number: number;
 };
 
 export const CustomIconButton: React.FC<IconButtonPropsType> = ({
     ariaLabel,
-    src,
+    iconId,
     number,
 }: IconButtonPropsType) => (
     <IconButton
@@ -17,7 +19,7 @@ export const CustomIconButton: React.FC<IconButtonPropsType> = ({
         aria-label={ariaLabel}
         icon={
             <Flex alignItems='center' m='4px 8px'>
-                <Image src={src} alt='button icon like' boxSize='12px' />
+                <IconSvg iconId={iconId} />
                 <Text color='brand.600' ml='6px'>
                     {number}
                 </Text>

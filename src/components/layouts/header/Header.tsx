@@ -13,7 +13,14 @@ export const Header: React.FC = () => {
         sm: '80px', // для экранов шире 768px (md - breakpoint для 768px)
     });
     return (
-        <Flex as='header' w='100%' h={height} bgColor='brand.50' alignItems='center'>
+        <Flex
+            as='header'
+            position='fixed'
+            w='100%'
+            h={height}
+            bgColor='brand.50'
+            alignItems='center'
+        >
             <Logo />
             <Hide below='md'>
                 <Flex flexGrow={1} justifyContent='space-between' alignItems='center'>
