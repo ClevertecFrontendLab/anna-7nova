@@ -1,24 +1,18 @@
-import {
-    Box,
-    Card,
-    CardBody,
-    Flex,
-    Heading,
-    Image,
-    Show,
-    Text,
-    useBreakpointValue,
-} from '@chakra-ui/react';
+import { Card, Flex, Hide, Image, Show, Stack } from '@chakra-ui/react';
 import React from 'react';
 
-import { icons } from '../../aside/icons';
 import { CustomIconButton } from '../../header/Account/CustomIconButton';
+import { Category } from './Category';
+import { CustomCardBody } from './CustomCardBody';
 
-type NewRecipesCardPropsType = {
-    src: string;
+export type CardBodyType = {
     title: string;
     text: string;
 };
+
+export type NewRecipesCardPropsType = {
+    src: string;
+} & CardBodyType;
 
 export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
     src,
@@ -26,19 +20,19 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
     text,
 }: NewRecipesCardPropsType) => {
     const cardWeight = { base: '158px', sm: '158px', md: '210px', lg: '277px', xl: '322px' };
-    const rows = useBreakpointValue({
-        base: 2,
-        sm: 2,
-        md: 2,
-        lg: 1,
-    });
+    const stackPadding = {
+        base: '8px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px 24px 20px',
+    };
     return (
         <Card
+            position='relative'
             direction='column'
             variant='outline'
             w={cardWeight}
             minW={cardWeight}
-            position='relative'
         >
             <Image
                 objectFit='cover'
@@ -46,50 +40,22 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
                 maxW='100%'
                 h={{ sm: '128pxm', md: '230px' }}
                 src={src}
-                alt='Reciepe Solianka'
+                alt='The Dish'
             />
-            <CardBody
-                p={{
-                    base: '8px 8px 36px',
-                    sm: '8px 8px 36px',
-                    lg: '12px 12px 60px',
-                    xl: '16px 24px 68px',
-                }}
-            >
-                <Heading noOfLines={rows} size='md'>
-                    {title}
-                </Heading>
-                <Show above='lg'>
-                    <Box mt='8px'>
-                        <Text noOfLines={3}>{text}</Text>
-                    </Box>
-                </Show>
-            </CardBody>
-            <Flex
-                position='absolute'
-                h='100%'
-                w='100%'
-                flexDir={{ base: 'column', sm: 'column', md: 'column', lg: 'row' }}
-                justifyContent='space-between'
-                alignItems={{
-                    base: 'flex-start',
-                    sm: 'flex-start',
-                    md: 'flex-start',
-                    lg: 'flex-end',
-                }}
-            >
-                <Box
-                    bg='brand.150'
-                    display='flex'
-                    alignItems='center'
-                    p='2px 8px'
-                    m={{ base: '8px', sm: '8px', md: '8px', lg: '12px' }}
-                >
-                    <img src={icons.mainMeal} />
-                    <Text fontSize='14px'>Первые блюда</Text>
-                </Box>
-                <CustomIconButton ariaLabel='button icon pined' iconId='save' number={1} />
-            </Flex>
+            <Stack p={stackPadding} gap='0' w='100%' justifyContent='space-between'>
+                <CustomCardBody title={title} text={text} />
+                <Flex justifyContent='space-between' alignItems='center'>
+                    <Hide below='md'>
+                        <Category bgColor='brand.150' />
+                    </Hide>
+                    <CustomIconButton ariaLabel='button icon pined' iconId='save' number={1} />
+                </Flex>
+            </Stack>
+            <Show below='md'>
+                <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
+                    <Category bgColor='brand.150' />
+                </Flex>
+            </Show>
         </Card>
     );
 };

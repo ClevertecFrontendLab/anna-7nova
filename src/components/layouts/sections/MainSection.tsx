@@ -1,7 +1,10 @@
-import { Container, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Container, Flex, Hide, Show, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
+import { ButtonMore } from './blocks/ButtonMore';
+import { GeneralRecipes } from './blocks/GeneralRecipes';
 import { NewRecipes } from './blocks/NewRecipes';
+import { TitleSection } from './blocks/TitleSection';
 import { SearchSection } from './SearchSection';
 
 export const MainSection: React.FC = () => {
@@ -21,7 +24,24 @@ export const MainSection: React.FC = () => {
             centerContent
         >
             <SearchSection />
-            <NewRecipes />
+            <Box w='100%'>
+                <TitleSection title='Новые рецепты ' />
+                <NewRecipes />
+            </Box>
+            <Box w='100%'>
+                <Flex justifyContent='space-between' alignItems='center'>
+                    <TitleSection title='Самое сочное ' />
+                    <Hide below='md'>
+                        <ButtonMore />
+                    </Hide>
+                </Flex>
+                <GeneralRecipes />
+                <Show below='md'>
+                    <Box w='100%' display='flex' justifyContent='center' mt='12px'>
+                        <ButtonMore />
+                    </Box>
+                </Show>
+            </Box>
         </Container>
     );
 };

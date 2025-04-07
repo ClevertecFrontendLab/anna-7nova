@@ -20,6 +20,7 @@ export const Header: React.FC = () => {
             h={height}
             bgColor='brand.50'
             alignItems='center'
+            zIndex='1'
         >
             <Logo />
             <Hide below='md'>
