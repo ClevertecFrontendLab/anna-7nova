@@ -8,16 +8,15 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
+import { PodCategoryType } from './category';
 import { CustomAccordionLink } from './CustomAccordionLink';
 
 type CustomAccordionItemPropsType = {
-    topic: string;
-    icons: string;
+    category: PodCategoryType;
 };
 
 export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
-    topic,
-    icons,
+    category,
 }: CustomAccordionItemPropsType) => (
     <AccordionItem m='0 10px'>
         <AccordionButton
@@ -25,9 +24,9 @@ export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
             _hover={{ bg: 'brand.150' }}
             _expanded={{ bg: 'brand.100', fontWeight: '700' }}
         >
-            <img src={icons} />
+            <img src={category.src} />
             <Box as='span' textAlign='left' ml='12px'>
-                {topic}
+                {category.category}
             </Box>
             <AccordionIcon />
         </AccordionButton>

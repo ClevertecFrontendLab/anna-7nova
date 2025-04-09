@@ -66,7 +66,7 @@ export const MainSection: React.FC = () => {
                     flexDir={{ base: 'column', lg: 'row' }}
                 >
                     <TitleSection title='Веганская кухня' />
-                    <Text maxW='100%' minW='328px'>
+                    <Text maxW='100%' minW='328px' maxWidth='668px'>
                         Интересны не только убеждённым вегетарианцам, но и тем, кто хочет
                         попробовать вегетарианскую диету и готовить вкусные вегетарианские блюда.
                     </Text>

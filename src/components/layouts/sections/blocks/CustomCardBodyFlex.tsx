@@ -3,7 +3,7 @@ import React from 'react';
 
 import { CardBodyType } from './NewRecipesCard';
 
-export const CustomCardBody: React.FC<CardBodyType> = ({ title, text }: CardBodyType) => {
+export const CustomCardBodyFlex: React.FC<CardBodyType> = ({ title, text }: CardBodyType) => {
     const rows = useBreakpointValue({
         base: 2,
         sm: 2,

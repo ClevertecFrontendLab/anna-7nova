@@ -2,6 +2,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { Flex, Hide, IconButton, Show, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
+import avatar from '../../../assets/images/avatar.png';
 import { UserAccount } from './Account/UserAcount';
 import { UserNotifications } from './Account/UserNotifications';
 import { Logo } from './Logo';
@@ -26,7 +27,11 @@ export const Header: React.FC = () => {
             <Hide below='md'>
                 <Flex flexGrow={1} justifyContent='space-between' alignItems='center'>
                     <NavMenu />
-                    <UserAccount />
+                    <UserAccount
+                        avatar={avatar}
+                        userName='Екатерина Константинопольская'
+                        accountName='@bake_and_pie'
+                    />
                 </Flex>
             </Hide>
             <Show below='md'>

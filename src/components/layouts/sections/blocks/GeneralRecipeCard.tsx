@@ -14,16 +14,18 @@ import {
 import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
+import { Rate } from '~/components/commonComponents/rate';
 
-import { CustomIconButton } from '../../header/Account/CustomIconButton';
 import { Category } from './Category';
-import { CustomCardBody } from './CustomCardBody';
+import { CustomCardBodyFlex } from './CustomCardBodyFlex';
 import { NewRecipesCardPropsType } from './NewRecipesCard';
 
 export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
     title,
     text,
     src,
+    category,
+    rate,
 }: NewRecipesCardPropsType) => {
     const cardPadding = {
         base: '0 0 40px',
@@ -46,14 +48,14 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
                 maxW='40%'
             />
             <Stack p={stackPadding} gap='0' maxW='60%' flexGrow={1}>
-                <Flex justifyContent='space-between' alignItems='center'>
+                <Flex justifyContent='space-between' alignItems='center' wrap='wrap'>
                     <Hide below='md'>
-                        <Category text='Первые блюда' />
+                        <Category category={category} />
                     </Hide>
-                    <CustomIconButton ariaLabel='button icon pined' iconId='save' number={1} />
+                    <Rate rate={rate} />
                 </Flex>
                 <CardBody p={cardPadding}>
-                    <CustomCardBody title={title} text={text} />
+                    <CustomCardBodyFlex title={title} text={text} />
                 </CardBody>
                 <CardFooter p='0' justifyContent='flex-end' gap='8px'>
                     <IconButton
@@ -82,7 +84,7 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
             </Stack>
             <Show below='md'>
                 <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <Category text='Первые блюда' />
+                    <Category category={category} />
                 </Flex>
             </Show>
         </Card>

@@ -1,8 +1,8 @@
 import { Accordion, Box } from '@chakra-ui/react';
 import React from 'react';
 
+import { category } from './category';
 import { CustomAccordionItem } from './CustomAccordionItem';
-import { icons } from './icons';
 
 export const Aside: React.FC = () => (
     <Box
@@ -17,19 +17,19 @@ export const Aside: React.FC = () => (
         bgColor='white'
     >
         <Accordion allowToggle pt='34px'>
-            <CustomAccordionItem icons={icons.salad} topic='Салаты' />
-            <CustomAccordionItem icons={icons.snacks} topic='Закуски' />
-            <CustomAccordionItem icons={icons.mainMeal} topic='Первые блюда' />
-            <CustomAccordionItem icons={icons.secondMeal} topic='Вторые блюда' />
-            <CustomAccordionItem icons={icons.desert} topic='Десерты, выпечка' />
-            <CustomAccordionItem icons={icons.grill} topic='Блюда на гриле' />
-            <CustomAccordionItem icons={icons.vegan} topic='Веганская кухня' />
-            <CustomAccordionItem icons={icons.child} topic='Детские блюда' />
-            <CustomAccordionItem icons={icons.health} topic='Лечебное питание' />
-            <CustomAccordionItem icons={icons.traditional} topic='Национальные' />
-            <CustomAccordionItem icons={icons.souse} topic='Соусы' />
-            <CustomAccordionItem icons={icons.drink} topic='Напитки' />
-            <CustomAccordionItem icons={icons.ready} topic='Заготовки' />
+            <CustomAccordionItem category={category.salad} />
+            <CustomAccordionItem category={category.snacks} />
+            <CustomAccordionItem category={category.mainMeal} />
+            <CustomAccordionItem category={category.secondMeal} />
+            <CustomAccordionItem category={category.desert} />
+            <CustomAccordionItem category={category.grill} />
+            <CustomAccordionItem category={category.vegan} />
+            <CustomAccordionItem category={category.child} />
+            <CustomAccordionItem category={category.health} />
+            <CustomAccordionItem category={category.traditional} />
+            <CustomAccordionItem category={category.souse} />
+            <CustomAccordionItem category={category.drink} />
+            <CustomAccordionItem category={category.ready} />
         </Accordion>
     </Box>
 );

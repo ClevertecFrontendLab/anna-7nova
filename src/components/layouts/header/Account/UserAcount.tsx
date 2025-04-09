@@ -1,14 +1,22 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import avatar from '../../../../assets/images/avatar.png';
+export type UserAccountPropsType = {
+    avatar: string;
+    userName: string;
+    accountName: string;
+};
 
-export const UserAccount: React.FC = () => (
+export const UserAccount: React.FC<UserAccountPropsType> = ({
+    avatar,
+    userName,
+    accountName,
+}: UserAccountPropsType) => (
     <>
         <Avatar size='48px' name='Аватар пользователя' src={avatar} />
         <Flex flexDir='column' mr='80px' ml='12px'>
-            <Text noOfLines={1}>Екатерина Константинопольская</Text>
-            <Text>@bake_and_pie</Text>
+            <Text noOfLines={1}>{userName}</Text>
+            <Text>{accountName}</Text>
         </Flex>
     </>
 );

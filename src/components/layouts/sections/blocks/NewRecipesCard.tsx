@@ -1,23 +1,29 @@
 import { Card, Flex, Hide, Image, Show, Stack } from '@chakra-ui/react';
 import React from 'react';
 
-import { CustomIconButton } from '../../header/Account/CustomIconButton';
+import { Rate, RateElementType } from '~/components/commonComponents/rate';
+
+import { PodCategoryType } from '../../aside/category';
 import { Category } from './Category';
-import { CustomCardBody } from './CustomCardBody';
+import { CustomCardBodyFlex } from './CustomCardBodyFlex';
 
 export type CardBodyType = {
-    title: string;
+    title?: string;
     text: string;
 };
 
 export type NewRecipesCardPropsType = {
     src: string;
+    category: PodCategoryType;
+    rate: RateElementType;
 } & CardBodyType;
 
 export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
     src,
     title,
     text,
+    category,
+    rate,
 }: NewRecipesCardPropsType) => {
     const cardWeight = { base: '158px', sm: '158px', md: '210px', lg: '277px', xl: '322px' };
     const stackPadding = {
@@ -43,17 +49,17 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
                 alt='The Dish'
             />
             <Stack p={stackPadding} gap='0' w='100%' justifyContent='space-between'>
-                <CustomCardBody title={title} text={text} />
+                <CustomCardBodyFlex title={title} text={text} />
                 <Flex justifyContent='space-between' alignItems='center'>
                     <Hide below='md'>
-                        <Category bgColor='brand.150' text='Первые блюда' />
+                        <Category bgColor='brand.150' category={category} />
                     </Hide>
-                    <CustomIconButton ariaLabel='button icon pined' iconId='save' number={1} />
+                    <Rate rate={rate} />
                 </Flex>
             </Stack>
             <Show below='md'>
                 <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <Category bgColor='brand.150' text='Первые блюда' />
+                    <Category bgColor='brand.150' category={category} />
                 </Flex>
             </Show>
         </Card>
