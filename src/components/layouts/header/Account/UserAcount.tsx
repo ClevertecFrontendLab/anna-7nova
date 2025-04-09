@@ -7,7 +7,7 @@ export const UserAccount: React.FC = () => (
     <>
         <Avatar size='48px' name='Аватар пользователя' src={avatar} />
         <Flex flexDir='column' mr='80px' ml='12px'>
-            <Text>Екатерина Константинопольская</Text>
+            <Text noOfLines={1}>Екатерина Константинопольская</Text>
             <Text>@bake_and_pie</Text>
         </Flex>
     </>

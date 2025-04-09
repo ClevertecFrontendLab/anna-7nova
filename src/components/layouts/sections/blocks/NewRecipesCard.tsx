@@ -46,14 +46,14 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
                 <CustomCardBody title={title} text={text} />
                 <Flex justifyContent='space-between' alignItems='center'>
                     <Hide below='md'>
-                        <Category bgColor='brand.150' />
+                        <Category bgColor='brand.150' text='Первые блюда' />
                     </Hide>
                     <CustomIconButton ariaLabel='button icon pined' iconId='save' number={1} />
                 </Flex>
             </Stack>
             <Show below='md'>
                 <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <Category bgColor='brand.150' />
+                    <Category bgColor='brand.150' text='Первые блюда' />
                 </Flex>
             </Show>
         </Card>

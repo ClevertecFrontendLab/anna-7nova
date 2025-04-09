@@ -45,10 +45,10 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
                 alt='The Dish'
                 maxW='40%'
             />
-            <Stack p={stackPadding} gap='0' maxW='60%'>
+            <Stack p={stackPadding} gap='0' maxW='60%' flexGrow={1}>
                 <Flex justifyContent='space-between' alignItems='center'>
                     <Hide below='md'>
-                        <Category />
+                        <Category text='Первые блюда' />
                     </Hide>
                     <CustomIconButton ariaLabel='button icon pined' iconId='save' number={1} />
                 </Flex>
@@ -82,7 +82,7 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
             </Stack>
             <Show below='md'>
                 <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <Category />
+                    <Category text='Первые блюда' />
                 </Flex>
             </Show>
         </Card>
