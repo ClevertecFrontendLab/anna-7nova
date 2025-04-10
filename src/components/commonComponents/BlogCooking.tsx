@@ -1,10 +1,10 @@
 import { Grid } from '@chakra-ui/react';
 import React from 'react';
 
-import avatar2 from '../../../../assets/images/users/user_alex.png';
-import avatar3 from '../../../../assets/images/users/user_ekaterina.png';
-import avatar1 from '../../../../assets/images/users/user_elena.png';
-import { BlogItem } from './BlogItem';
+import avatar2 from '../../assets/images/users/user_alex.png';
+import avatar3 from '../../assets/images/users/user_ekaterina.png';
+import avatar1 from '../../assets/images/users/user_elena.png';
+import { BlogItem } from '../layouts/sections/blocks/BlogItem';
 
 export const BlogCooking: React.FC = () => {
     const templateColumns = {

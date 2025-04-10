@@ -3,7 +3,7 @@ import { Flex, Hide, IconButton, Show, useBreakpointValue } from '@chakra-ui/rea
 import React from 'react';
 
 import avatar from '../../../assets/images/avatar.png';
-import { UserAccount } from './Account/UserAcount';
+import { UserAccount } from '../../commonComponents/UserAcount';
 import { UserNotifications } from './Account/UserNotifications';
 import { Logo } from './Logo';
 import { NavMenu } from './NavMenu';

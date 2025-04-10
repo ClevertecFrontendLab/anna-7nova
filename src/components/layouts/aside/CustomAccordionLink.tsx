@@ -3,13 +3,16 @@ import React from 'react';
 
 type AccordionLinkPropsType = {
     text: string;
+    onClick: () => void;
 };
 
 export const CustomAccordionLink: React.FC<AccordionLinkPropsType> = ({
     text,
+    onClick,
 }: AccordionLinkPropsType) => (
     <Link
         href='#'
+        onClick={onClick}
         borderLeft='1px'
         pl='11px'
         m='12px 0 12px 10px'

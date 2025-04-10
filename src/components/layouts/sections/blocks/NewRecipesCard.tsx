@@ -1,11 +1,11 @@
 import { Card, Flex, Hide, Image, Show, Stack } from '@chakra-ui/react';
 import React from 'react';
 
-import { Rate, RateElementType } from '~/components/commonComponents/rate';
+import { CategorySticker } from '~/components/commonComponents/CategorySticker';
+import { Rate, RateElementType } from '~/components/commonComponents/Rate';
 
-import { PodCategoryType } from '../../aside/category';
-import { Category } from './Category';
-import { CustomCardBodyFlex } from './CustomCardBodyFlex';
+import { PodCategoryType } from '../../../commonComponents/category';
+import { CustomCardBodyFlex } from '../../../commonComponents/CustomCardBodyFlex';
 
 export type CardBodyType = {
     title?: string;
@@ -52,14 +52,14 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
                 <CustomCardBodyFlex title={title} text={text} />
                 <Flex justifyContent='space-between' alignItems='center'>
                     <Hide below='md'>
-                        <Category bgColor='brand.150' category={category} />
+                        <CategorySticker bgColor='brand.150' category={category} />
                     </Hide>
                     <Rate rate={rate} />
                 </Flex>
             </Stack>
             <Show below='md'>
                 <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <Category bgColor='brand.150' category={category} />
+                    <CategorySticker bgColor='brand.150' category={category} />
                 </Flex>
             </Show>
         </Card>

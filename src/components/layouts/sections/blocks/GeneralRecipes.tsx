@@ -1,8 +1,8 @@
 import { Grid } from '@chakra-ui/react';
 import React from 'react';
 
-import { category } from '../../aside/category';
-import { blockNewReciepes } from './BlocksImages';
+import { blockNewReciepes } from '../../../commonComponents/BlocksImages';
+import { category } from '../../../commonComponents/category';
 import { GeneralRecipeCard } from './GeneralRecipeCard';
 
 export const GeneralRecipes: React.FC = () => {

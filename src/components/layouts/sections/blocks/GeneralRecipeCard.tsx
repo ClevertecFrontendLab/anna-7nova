@@ -14,10 +14,10 @@ import {
 import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
-import { Rate } from '~/components/commonComponents/rate';
+import { CategorySticker } from '~/components/commonComponents/CategorySticker';
+import { Rate } from '~/components/commonComponents/Rate';
 
-import { Category } from './Category';
-import { CustomCardBodyFlex } from './CustomCardBodyFlex';
+import { CustomCardBodyFlex } from '../../../commonComponents/CustomCardBodyFlex';
 import { NewRecipesCardPropsType } from './NewRecipesCard';
 
 export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
@@ -50,7 +50,7 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
             <Stack p={stackPadding} gap='0' maxW='60%' flexGrow={1}>
                 <Flex justifyContent='space-between' alignItems='center' wrap='wrap'>
                     <Hide below='md'>
-                        <Category category={category} />
+                        <CategorySticker category={category} />
                     </Hide>
                     <Rate rate={rate} />
                 </Flex>
@@ -84,7 +84,7 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
             </Stack>
             <Show below='md'>
                 <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <Category category={category} />
+                    <CategorySticker category={category} />
                 </Flex>
             </Show>
         </Card>

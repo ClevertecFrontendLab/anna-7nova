@@ -1,7 +1,7 @@
 import { Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
-import { CardBodyType } from './NewRecipesCard';
+import { CardBodyType } from '../layouts/sections/blocks/NewRecipesCard';
 
 export const CustomCardBodyFull: React.FC<CardBodyType> = ({ title, text }: CardBodyType) => {
     const rows = useBreakpointValue({

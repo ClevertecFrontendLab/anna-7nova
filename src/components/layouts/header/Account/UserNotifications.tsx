@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Rate } from '~/components/commonComponents/rate';
+import { Rate } from '~/components/commonComponents/Rate';
 
 export const UserNotifications: React.FC = () => (
     <>

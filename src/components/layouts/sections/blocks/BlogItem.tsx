@@ -1,8 +1,8 @@
 import { Flex, GridItem } from '@chakra-ui/react';
 import React from 'react';
 
-import { UserAccount, UserAccountPropsType } from '../../header/Account/UserAcount';
-import { CustomCardBodyFull } from './CustomCardBodyFull';
+import { CustomCardBodyFull } from '../../../commonComponents/CustomCardBodyFull';
+import { UserAccount, UserAccountPropsType } from '../../../commonComponents/UserAcount';
 
 type BlogItemPropsType = {
     textBlog: string;

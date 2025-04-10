@@ -1,10 +1,10 @@
 import { Card, Flex, GridItem } from '@chakra-ui/react';
 import React from 'react';
 
-import { Rate, RateElementType } from '~/components/commonComponents/rate';
+import { Rate, RateElementType } from '~/components/commonComponents/Rate';
 
-import { PodCategoryType } from '../../aside/category';
-import { Category } from './Category';
+import { PodCategoryType } from './category';
+import { CategorySticker } from './CategorySticker';
 import { CustomCardBodyFull } from './CustomCardBodyFull';
 
 type CardDesignBasicPropsType = {
@@ -31,7 +31,7 @@ export const CardDesignBasic: React.FC<CardDesignBasicPropsType> = ({
         >
             <CustomCardBodyFull title={title} text={text} />
             <Flex justifyContent='space-between' alignItems='center' wrap='wrap'>
-                <Category category={category} />
+                <CategorySticker category={category} />
                 <Rate rate={rate} />
             </Flex>
         </Card>

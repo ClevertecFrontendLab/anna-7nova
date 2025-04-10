@@ -1,7 +1,7 @@
 import { Flex } from '@chakra-ui/react';
 import React from 'react';
 
-import { CustomIconButton } from '../layouts/header/Account/CustomIconButton';
+import { CustomIconButton } from './CustomIconButton';
 
 export type RateElementType = {
     like?: number;

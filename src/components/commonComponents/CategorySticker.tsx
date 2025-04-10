@@ -1,7 +1,7 @@
 import { Box, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import { PodCategoryType } from '../../aside/category';
+import { PodCategoryType } from './category';
 
 type CategoryPropsType = {
     bgColor?: string;
@@ -9,7 +9,7 @@ type CategoryPropsType = {
     text?: string;
 };
 
-export const Category: React.FC<CategoryPropsType> = ({
+export const CategorySticker: React.FC<CategoryPropsType> = ({
     bgColor,
     category,
     text,
