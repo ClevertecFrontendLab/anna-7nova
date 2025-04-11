@@ -6,6 +6,13 @@ import saladZdorozie from '../../assets/images/blocks/new_receipts/salad_zdorovi
 import solianka from '../../assets/images/blocks/new_receipts/solianka.png';
 import tomyam from '../../assets/images/blocks/new_receipts/tomyam.png';
 import vetchina from '../../assets/images/blocks/new_receipts/vetchina.png';
+import chesnokPotato from '../../assets/images/blocks/vegan/chesnok_potato.png';
+import potato from '../../assets/images/blocks/vegan/potato.png';
+import rulets from '../../assets/images/blocks/vegan/potato_ruletes.png';
+import puri from '../../assets/images/blocks/vegan/puri.png';
+import tefteli from '../../assets/images/blocks/vegan/tefteli.png';
+import tomYamWithKimChi from '../../assets/images/blocks/vegan/tom_yam_with_kapusta.png';
+import vegetableLazania from '../../assets/images/blocks/vegan/vegetable_lazania.png';
 
 export const blockNewReciepes = {
     solianka,
@@ -16,4 +23,11 @@ export const blockNewReciepes = {
     vetchina,
     lapsha,
     tomyam,
+    potato,
+    rulets,
+    tomYamWithKimChi,
+    vegetableLazania,
+    tefteli,
+    chesnokPotato,
+    puri,
 };
