@@ -2,7 +2,7 @@ import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import { Box, Flex, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
-import { blockNewReciepes } from '~/components/commonComponents/BlocksImages';
+import { blockNewReciepes } from '~/components/commonComponents/blocksImages';
 
 import { category } from '../../../commonComponents/category';
 import { NewRecipesCard } from './NewRecipesCard';
@@ -15,7 +15,13 @@ export const NewRecipes: React.FC = () => {
         lg: '147px',
     });
     return (
-        <Box gap='24px' display='flex' overflowX='hidden' maxW='100%' position='relative'>
+        <Box
+            gap={{ base: '12px', xl: '24px' }}
+            display='flex'
+            overflowX='hidden'
+            maxW='100%'
+            position='relative'
+        >
             <NewRecipesCard
                 category={category.mainMeal}
                 rate={{ save: 1 }}
@@ -64,7 +70,8 @@ export const NewRecipes: React.FC = () => {
                         color='white'
                         bg='black'
                         aria-label='Arrow Left'
-                        size='md'
+                        h={['32px', '32px', '36px', '40px', '48px']}
+                        minW={['32px', '32px', '36px', '40px', '48px']}
                         icon={<ArrowBackIcon />}
                         _hover={{ color: 'black', bg: 'brand.400', border: 'none' }}
                     />
@@ -72,7 +79,8 @@ export const NewRecipes: React.FC = () => {
                         color='white'
                         bg='black'
                         aria-label='Arrow Left'
-                        size='md'
+                        h={['32px', '32px', '36px', '40px', '48px']}
+                        minW={['32px', '32px', '36px', '40px', '48px']}
                         icon={<ArrowForwardIcon />}
                         _hover={{ color: 'black', bg: 'brand.400', border: 'none' }}
                     />

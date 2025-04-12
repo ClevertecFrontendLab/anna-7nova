@@ -5,20 +5,29 @@ import React from 'react';
 type ButtonMorePropsType = {
     text: string;
     bg?: string;
+    onClick: () => void;
 };
 
-export const ButtonMore: React.FC<ButtonMorePropsType> = ({ text, bg }: ButtonMorePropsType) => (
+export const ButtonMore: React.FC<ButtonMorePropsType> = ({
+    text,
+    bg,
+    onClick,
+}: ButtonMorePropsType) => (
     <IconButton
         variant='solid'
         bg={bg || 'brand.400'}
         aria-label='More'
+        onClick={onClick}
+        h={{ base: '40px', xl: '48px' }}
+        p={{ lg: '8px 16px', xl: '10px 24px' }}
         icon={
-            <Flex alignItems='center' m='4px 8px'>
-                <Text pr='8px'>{text}</Text>
+            <Flex alignItems='center'>
+                <Text variant='buttonText' pr='8px'>
+                    {text}
+                </Text>
                 <ArrowForwardIcon />
             </Flex>
         }
-        p='10px 24px'
         _hover={{ bg: 'brand.600', border: 'none' }}
     />
 );

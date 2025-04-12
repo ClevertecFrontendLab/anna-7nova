@@ -14,8 +14,16 @@ export const BlogItem: React.FC<BlogItemPropsType> = ({
     accountName,
     textBlog,
 }: BlogItemPropsType) => (
-    <GridItem bg='white' borderRadius='8px' p='24px' minW='180px'>
-        <Flex mb='28px'>
+    <GridItem
+        bg='white'
+        borderRadius='8px'
+        p={{ base: '16px', xl: '24px' }}
+        minW='180px'
+        display='flex'
+        flexDir='column'
+        gap={{ base: '20px', lg: '16px', xl: '28px' }}
+    >
+        <Flex alignItems='center'>
             <UserAccount avatar={avatar} userName={userName} accountName={accountName} />
         </Flex>
         <CustomCardBodyFull text={textBlog} />

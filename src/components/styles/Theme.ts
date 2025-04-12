@@ -28,4 +28,145 @@ export const theme = extendTheme({
         xl: '1920px',
         '2xl': '1920px',
     },
+    fonts: {
+        heading: `'Inter', sans-serif`,
+        body: `'Inter', sans-serif`,
+    },
+    components: {
+        Tabs: {
+            baseStyle: {
+                tab: {
+                    border: 'none',
+                    borderRadius: 0,
+                    _hover: {
+                        borderBottom: '2px solid',
+                        borderColor: 'brand.600',
+                        color: 'brand.600',
+                    },
+                    _selected: {
+                        borderBottom: '2px solid',
+                        borderColor: 'brand.600',
+                        color: 'brand.600',
+                    },
+                    _focus: {
+                        boxShadow: 'none',
+                        outline: 'none',
+                    },
+                    p: '9px 16px',
+                },
+            },
+        },
+        Heading: {
+            sizes: {
+                h2: {
+                    fontSize: { base: '24px', md: '32px', lg: '48px', xl: '48px' },
+                    fontWeight: 700,
+                    lineHeight: { base: '133%', lg: '100%' },
+                    margin: ['16px 0', '16px 0', '24px 0', '32px 0', '32px 0'],
+                },
+                h3: {
+                    fontSize: { base: '24px', md: '30px', lg: '36px', xl: '48px' },
+                    fontWeight: 500,
+                    lineHeight: '111%',
+                    margin: ['0 0 12px', '0 0 12px', '0 0 18px', '0 0 24px', '0 0 24px'],
+                },
+                h4: {
+                    fontSize: { base: '24px', md: '28px', lg: '30px', xl: '36px' },
+                    fontWeight: 400,
+                    lineHeight: '120%',
+                    margin: ['0 0 12px', '0 0 12px', '0 0 14px', '0 0 16px', '0 0 24px'],
+                },
+                h5: {
+                    fontSize: { base: '16px', md: '18px', lg: '20px' },
+                    fontWeight: 500,
+                    lineHeight: '140%',
+                },
+                h6: {
+                    fontSize: { base: '16px', md: '18px', xl: '20px' },
+                    fontWeight: 500,
+                    lineHeight: '140%',
+                },
+            },
+        },
+        Text: {
+            baseStyle: {
+                fontSize: '14px',
+                fontWeight: 400,
+                lineHeight: '143%',
+            },
+            variants: {
+                bigText: {
+                    fontSize: { base: '16px', lg: '18px', xl: '20px' },
+                    fontWeight: 500,
+                    lineHeight: '140%',
+                },
+                userName: {
+                    fontSize: { base: '16px', lg: '18px' },
+                    fontWeight: 500,
+                    lineHeight: '150%',
+                },
+                userNickName: {
+                    color: ' blackAlpha.700',
+                },
+                buttonText: {
+                    fontSize: { base: '16px', xl: '18px' },
+                    fontWeight: 600,
+                    lineHeight: '150%',
+                },
+                buttonTextSmall: {
+                    fontSize: { base: '12px', lg: '14px' },
+                    fontWeight: 600,
+                    lineHeight: '143%',
+                    p: '9px 12px',
+                },
+                buttonTextSmallest: {
+                    fontSize: { base: '12px', xl: '14px' },
+                    fontWeight: 600,
+                    lineHeight: '133%',
+                    p: { base: '8px', xl: '6px 12px' },
+                },
+            },
+        },
+        FormLabel: {
+            baseStyle: {
+                fontSize: '16px',
+                fontWeight: 500,
+                lineHeight: '150%',
+            },
+        },
+        Button: {
+            baseStyle: {
+                fontSize: '14px',
+                fontWeight: 600,
+                lineHeight: '143%',
+            },
+            variants: {
+                buttonTextSmall: {
+                    fontSize: { base: '12px', lg: '14px' },
+                    lineHeight: '143%',
+                    p: { base: '4px 8px', xl: '6px 12px' },
+                },
+                buttonTextSmallest: {
+                    fontSize: { base: '12px', xl: '14px' },
+                    lineHeight: '133%',
+                },
+            },
+        },
+        IconButton: {
+            variants: {
+                buttonTextSmall: {
+                    fontSize: { base: '12px', lg: '14px' },
+                    fontWeight: 600,
+                    lineHeight: '143%',
+                },
+            },
+        },
+        Input: {
+            baseStyle: {
+                fontSize: { base: '14px', md: '16px', lg: '18px' },
+                fontWeight: 400,
+                lineHeight: '143%',
+            },
+        },
+    },
 });

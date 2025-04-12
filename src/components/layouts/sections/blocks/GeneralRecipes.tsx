@@ -14,10 +14,11 @@ export const GeneralRecipes: React.FC<GeneralRecipesPropsType> = ({
         base: 'repeat(1, 1fr)',
         sm: 'repeat(2, 1fr)',
         md: 'repeat(1, 1fr)',
-        lg: 'repeat(2, 1fr)',
+        lg: 'repeat(1, 1fr)',
+        xl: 'repeat(2, 1fr)',
     };
     return (
-        <Grid templateColumns={templateColumns} gap='24px'>
+        <Grid templateColumns={templateColumns} gap={{ base: '12px', sm: '16px', xl: '24px' }}>
             {data.map((el) => (
                 <GeneralRecipeCard
                     key={el.title}

@@ -15,14 +15,19 @@ export const CardDesignSmall: React.FC<CardDesignSmallPropsType> = ({
     bgColor,
     category,
 }: CardDesignSmallPropsType) => (
-    <Card variant='outline' w='100%' p='14px 24px'>
+    <Card variant='outline' w='100%' p={{ base: '8px', sm: '10px 12px', xl: '12px 24px' }}>
         <Flex justifyContent='space-between'>
             <CategorySticker category={category} bgColor={bgColor || 'none'} text={text} />
             <Button
-                variant='outline'
-                _hover={{ bg: 'brand.800', border: 'none' }}
+                variant='buttonTextSmallest'
+                display='inline-block'
+                minW='70px'
+                h='32px'
+                padding={{ base: '6px 8px', xl: '6px 12px' }}
+                _hover={{ bg: 'brand.800', border: 'none', color: 'white' }}
                 color='brand.600'
                 borderColor='brand.600'
+                textOverflow='ellipsis'
             >
                 Готовить
             </Button>

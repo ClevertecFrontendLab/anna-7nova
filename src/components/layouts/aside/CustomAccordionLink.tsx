@@ -11,7 +11,6 @@ export const CustomAccordionLink: React.FC<AccordionLinkPropsType> = ({
     onClick,
 }: AccordionLinkPropsType) => (
     <Link
-        href='#'
         onClick={onClick}
         borderLeft='1px'
         pl='11px'

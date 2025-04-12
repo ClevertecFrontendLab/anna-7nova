@@ -13,10 +13,17 @@ export const UserAccount: React.FC<UserAccountPropsType> = ({
     accountName,
 }: UserAccountPropsType) => (
     <>
-        <Avatar size='48px' name='Аватар пользователя' src={avatar} />
-        <Flex flexDir='column' mr='80px' ml='12px'>
-            <Text noOfLines={1}>{userName}</Text>
-            <Text>{accountName}</Text>
+        <Avatar
+            h={{ base: '32px', md: '48px' }}
+            w={{ base: '32px', md: '48px' }}
+            name='Аватар пользователя'
+            src={avatar}
+        />
+        <Flex flexDir='column' ml='12px'>
+            <Text noOfLines={1} variant='userName'>
+                {userName}
+            </Text>
+            <Text variant='userNickName'>{accountName} </Text>
         </Flex>
     </>
 );

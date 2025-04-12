@@ -20,12 +20,12 @@ export const CardDesignBasic: React.FC<CardDesignBasicPropsType> = ({
     category,
     rate,
 }: CardDesignBasicPropsType) => (
-    <GridItem>
+    <GridItem colSpan={{ base: 3, sm: 1, md: 1, lg: 1, xl: 1 }}>
         <Card
             variant='outline'
             w='100%'
-            minW='200px'
-            p={{ base: '12px', md: '16px', lg: '24px' }}
+            gap='24px'
+            p={{ base: '12px', md: '16px', xl: '24px' }}
             h='100%'
             justifyContent='space-between'
         >

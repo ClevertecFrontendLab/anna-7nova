@@ -1,4 +1,4 @@
-import { Card, Flex, Hide, Image, Show, Stack } from '@chakra-ui/react';
+import { Box, Card, Flex, Image, Stack } from '@chakra-ui/react';
 import React from 'react';
 
 import { CategorySticker } from '~/components/commonComponents/CategorySticker';
@@ -30,12 +30,14 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
         base: '8px',
         sm: '8px',
         md: '12px',
-        lg: '16px 24px 20px',
+        lg: '12px',
+        xl: '16px 24px 20px',
     };
     return (
         <Card
             position='relative'
             direction='column'
+            justify='start'
             variant='outline'
             w={cardWeight}
             minW={cardWeight}
@@ -44,24 +46,31 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
                 objectFit='cover'
                 borderRadius='8px 8px 0 0 '
                 maxW='100%'
-                h={{ sm: '128pxm', md: '230px' }}
+                h={{ base: '128px', md: '230px' }}
                 src={src}
                 alt='The Dish'
             />
-            <Stack p={stackPadding} gap='0' w='100%' justifyContent='space-between'>
+            <Stack
+                p={stackPadding}
+                gap={{ base: '6px', lg: '24px' }}
+                w='100%'
+                justifyContent='space-between'
+            >
                 <CustomCardBodyFlex title={title} text={text} />
                 <Flex justifyContent='space-between' alignItems='center'>
-                    <Hide below='md'>
+                    <Box display={['none', 'none', 'none', 'block', 'block']}>
                         <CategorySticker bgColor='brand.150' category={category} />
-                    </Hide>
+                    </Box>
                     <Rate rate={rate} />
                 </Flex>
             </Stack>
-            <Show below='md'>
-                <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <CategorySticker bgColor='brand.150' category={category} />
-                </Flex>
-            </Show>
+            <Box
+                display={['block', 'block', 'block', 'none', 'none']}
+                position='absolute'
+                p='2px 0px 0 2px'
+            >
+                <CategorySticker bgColor='brand.150' category={category} />
+            </Box>
         </Card>
     );
 };

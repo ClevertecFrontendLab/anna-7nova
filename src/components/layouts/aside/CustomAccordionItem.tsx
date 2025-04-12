@@ -25,7 +25,7 @@ export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
             as='h2'
             _hover={{ bg: 'brand.150' }}
             _expanded={{ bg: 'brand.100', fontWeight: '700' }}
-            onClick={() => onClick(category.slug)}
+            onClick={() => onClick(category.slug, category.subcategories[0].slug)}
         >
             <img src={category.src} />
             <Box as='span' textAlign='left' ml='12px'>

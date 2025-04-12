@@ -1,13 +1,12 @@
 import {
+    Box,
     Button,
     Card,
     CardBody,
     CardFooter,
     Flex,
-    Hide,
     IconButton,
     Image,
-    Show,
     Stack,
     Text,
 } from '@chakra-ui/react';
@@ -27,53 +26,57 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
     category,
     rate,
 }: NewRecipesCardPropsType) => {
-    const cardPadding = {
-        base: '0 0 40px',
-        sm: '0 0 40px',
-        md: '24px 0',
-        lg: '24px 0',
-    };
     const stackPadding = {
-        base: '0 8px 8px',
-        sm: '0 8px 8px',
+        base: '8px',
         md: '20px 24px',
     };
     return (
-        <Card position='relative' direction='row' variant='outline' w='100%'>
+        <Card
+            position='relative'
+            direction='row'
+            variant='outline'
+            h={['128px', '128px', '244px', '244px']}
+            w='100%'
+        >
             <Image
                 objectFit='cover'
                 borderRadius='8px 0 0 8px'
                 src={src}
                 alt='The Dish'
-                maxW='40%'
+                w={{ base: '158px', lg: '346px' }}
             />
-            <Stack p={stackPadding} gap='0' maxW='60%' flexGrow={1}>
+            <Stack p={stackPadding} w='100%' gap={{ base: '0', lg: '24px' }}>
                 <Flex justifyContent='space-between' alignItems='center' wrap='wrap'>
-                    <Hide below='md'>
+                    <Box display={['none', 'none', 'none', 'block', 'block']}>
                         <CategorySticker category={category} />
-                    </Hide>
+                    </Box>
                     <Rate rate={rate} />
                 </Flex>
-                <CardBody p={cardPadding}>
+                <CardBody p='0'>
                     <CustomCardBodyFlex title={title} text={text} />
                 </CardBody>
-                <CardFooter p='0' justifyContent='flex-end' gap='8px'>
+                <CardFooter p='0' justifyContent='flex-end' gap={{ base: '12px', lg: '8px' }}>
                     <IconButton
-                        variant='outline'
+                        variant='buttonTextSmall'
+                        p={{ base: '4px 8px', lg: '6px 12px' }}
+                        h={{ base: '24px', lg: '32px' }}
+                        minW={{ base: '24px', lg: '32px' }}
                         _hover={{ bg: 'brand.150', border: 'none' }}
                         borderColor='blackAlpha.500'
                         aria-label='Save Button'
                         icon={
-                            <Flex alignItems='center' m='4px 8px'>
-                                <IconSvg iconId='save' />
-                                <Hide below='md'>
-                                    <Text ml='6px'>Сохранить</Text>
-                                </Hide>
+                            <Flex alignItems='center'>
+                                <IconSvg iconId='save' width='12px' height='12px' />
+                                <Box display={['none', 'none', 'none', 'block', 'block']}>
+                                    <Text ml='8px'>Сохранить</Text>
+                                </Box>
                             </Flex>
                         }
                     />
                     <Button
-                        variant='solid'
+                        variant='buttonTextSmall'
+                        p={{ base: '4px 8px', lg: '6px 12px' }}
+                        h={{ base: '24px', lg: '32px' }}
                         bg='black'
                         _hover={{ bg: 'brand.600', border: 'none' }}
                         color='white'
@@ -82,11 +85,15 @@ export const GeneralRecipeCard: React.FC<NewRecipesCardPropsType> = ({
                     </Button>
                 </CardFooter>
             </Stack>
-            <Show below='md'>
-                <Flex justifyContent='space-between' position='absolute' w='100%' p='8px'>
-                    <CategorySticker category={category} />
-                </Flex>
-            </Show>
+            <Box
+                display={['flex', 'flex', 'flex', 'none', 'none']}
+                justifyContent='space-between'
+                position='absolute'
+                w='100%'
+                p='8px'
+            >
+                <CategorySticker category={category} />
+            </Box>
         </Card>
     );
 };

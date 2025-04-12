@@ -6,9 +6,15 @@ import { useNavigate } from 'react-router';
 import { NavigationMenu } from '~/components/layouts/aside/NavigationMenu';
 import { Header } from '~/components/layouts/header/Header';
 
-import { AppRoutes } from './routes';
+import { AppRoutes } from './router/AppRoutes';
 
 function App() {
+    //styles
+    const weight = useBreakpointValue({
+        base: '100%',
+        md: 'calc(100vw - 530px)',
+    });
+
     const navigate = useNavigate();
     const navigateHandle = (categorySlug: string, subcategorySlug?: string) => {
         if (subcategorySlug) {
@@ -17,12 +23,6 @@ function App() {
             navigate(`/${categorySlug}`);
         }
     };
-    const weight = useBreakpointValue({
-        base: '100%',
-        sm: '100%',
-        md: 'calc(100vw - 540px)',
-        xl: '1360px',
-    });
     return (
         <>
             <Header />
@@ -34,8 +34,8 @@ function App() {
                 maxW={weight}
                 minH='calc(100vh - 80px)'
                 bg='white'
-                mt='80px'
-                gap='40px'
+                gap={['32px', '32px', '32px', '40px', '40px']}
+                mt={{ base: '64px', md: '80px' }}
                 centerContent
             >
                 <AppRoutes />

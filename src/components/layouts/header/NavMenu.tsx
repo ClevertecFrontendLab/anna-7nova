@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink, useLocation } from 'react-router';
 
+import { navigationRoutes } from '~/app/router/routes';
 import { category } from '~/components/commonComponents/category';
 
 const categoryNameBySlug: Record<string, string> = Object.values(category).reduce(
@@ -11,6 +12,14 @@ const categoryNameBySlug: Record<string, string> = Object.values(category).reduc
         item.subcategories?.forEach((sub) => {
             acc[sub.slug] = sub.name;
         });
+        return acc;
+    },
+    {} as Record<string, string>,
+);
+
+const routeNameByPath: Record<string, string> = navigationRoutes.reduce(
+    (acc, route) => {
+        if (route.name) acc[route.path] = route.name;
         return acc;
     },
     {} as Record<string, string>,
@@ -39,7 +48,11 @@ export const NavMenu: React.FC = () => {
             {pathnames.map((slug, index) => {
                 const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
                 const isLast = index === pathnames.length - 1;
-                const label = categoryNameBySlug[slug] || decodeURIComponent(slug);
+
+                const categoryLabel = categoryNameBySlug[slug];
+                const routeLabel = routeNameByPath[routeTo];
+
+                const label = categoryLabel || routeLabel || decodeURIComponent(slug);
 
                 return (
                     <BreadcrumbItem key={routeTo} isCurrentPage={isLast}>

@@ -10,8 +10,8 @@ import { NavMenu } from './NavMenu';
 
 export const Header: React.FC = () => {
     const height = useBreakpointValue({
-        base: '64px', // для мобильных устройств
-        sm: '80px', // для экранов шире 768px (md - breakpoint для 768px)
+        base: '64px',
+        md: '80px',
     });
     return (
         <Flex
@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
         >
             <Logo />
             <Hide below='md'>
-                <Flex flexGrow={1} justifyContent='space-between' alignItems='center'>
+                <Flex mr='70px' flexGrow={1} justifyContent='space-between' alignItems='center'>
                     <NavMenu />
                     <UserAccount
                         avatar={avatar}
@@ -35,13 +35,14 @@ export const Header: React.FC = () => {
                 </Flex>
             </Hide>
             <Show below='md'>
-                <Flex flexGrow={1} justifyContent='flex-end' alignItems='center'>
+                <Flex flexGrow={1} justifyContent='flex-end' alignItems='center' gap='12px'>
                     <UserNotifications />
                     <IconButton
                         variant='ghost'
                         aria-label='Mobile menu'
                         icon={<HamburgerIcon />}
-                        mr='20px'
+                        size='lg'
+                        mr='5px'
                     />
                 </Flex>
             </Show>

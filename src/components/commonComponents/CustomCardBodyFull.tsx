@@ -5,24 +5,21 @@ import { CardBodyType } from '../layouts/sections/blocks/NewRecipesCard';
 
 export const CustomCardBodyFull: React.FC<CardBodyType> = ({ title, text }: CardBodyType) => {
     const rows = useBreakpointValue({
-        base: 2,
-        sm: 2,
+        base: 1,
+        sm: 1,
         md: 2,
         lg: 1,
     });
-    console.log('Title:', title);
-    console.log('Text:', text);
-    console.log('Rows:', rows);
     return (
-        <>
+        <Box>
             {title && (
-                <Heading noOfLines={rows} size='md' mb='8px'>
+                <Heading as='h5' size='h5' noOfLines={rows} mb='8px'>
                     {title}
                 </Heading>
             )}
             <Box>
                 <Text noOfLines={3}>{text}</Text>
             </Box>
-        </>
+        </Box>
     );
 };

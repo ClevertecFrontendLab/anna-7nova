@@ -15,11 +15,11 @@ export const CategorySticker: React.FC<CategoryPropsType> = ({
     text,
 }: CategoryPropsType) => {
     const currentText = text ? (
-        <Text noOfLines={1} fontSize='14px' pl='8px'>
+        <Text variant='bigText' flexShrink={1} noOfLines={1} pl='0 8px'>
             {text}
         </Text>
     ) : (
-        <Text fontSize='14px' pl='8px'>
+        <Text h='24px' pl={{ base: '2px', lg: '8px' }} whiteSpace='break-spaces'>
             {category.category}
         </Text>
     );
@@ -29,10 +29,10 @@ export const CategorySticker: React.FC<CategoryPropsType> = ({
                 bg={bgColor || 'brand.50'}
                 display='flex'
                 alignItems='center'
-                p='2px 8px'
-                minW='150px'
+                borderRadius='4px'
+                p={{ base: '2px 4px', lg: '2px 8px' }}
             >
-                <img src={category.src} />
+                <img width='16px' height='16px' src={category.src} />
                 {currentText}
             </Box>
         </>

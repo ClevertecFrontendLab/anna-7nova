@@ -1,4 +1,4 @@
-import { Box, Heading, Show, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Heading, Text, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
 import { CardBodyType } from '../layouts/sections/blocks/NewRecipesCard';
@@ -11,17 +11,13 @@ export const CustomCardBodyFlex: React.FC<CardBodyType> = ({ title, text }: Card
         lg: 1,
     });
     return (
-        <>
-            <Heading noOfLines={rows} size='md' mb='8px'>
+        <Box>
+            <Heading as='h6' size='h6' noOfLines={rows} mb='8px'>
                 {title}
             </Heading>
-            <Show above='md'>
-                <Box>
-                    <Text noOfLines={3} mb='24px'>
-                        {text}
-                    </Text>
-                </Box>
-            </Show>
-        </>
+            <Box display={['none', 'none', 'block', 'block', 'block']}>
+                <Text noOfLines={3}>{text}</Text>
+            </Box>
+        </Box>
     );
 };
