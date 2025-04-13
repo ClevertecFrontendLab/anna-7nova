@@ -1,9 +1,11 @@
 import './App.css';
 
-import { Container, Hide, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Container, useBreakpointValue } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 
 import { NavigationMenu } from '~/components/layouts/aside/NavigationMenu';
+import UserSettings from '~/components/layouts/aside/UserSettings';
+import { Footer } from '~/components/layouts/footer/Footer';
 import { Header } from '~/components/layouts/header/Header';
 
 import { AppRoutes } from './router/AppRoutes';
@@ -26,20 +28,23 @@ function App() {
     return (
         <>
             <Header />
-            <Hide below='md'>
+            <Box display={{ base: 'none', md: 'block' }}>
                 <NavigationMenu onClick={navigateHandle} />
-            </Hide>
+                <UserSettings />
+            </Box>
             <Container
                 as='section'
                 maxW={weight}
-                minH='calc(100vh - 80px)'
+                minH={{ base: 'calc(100vw -80px - 84px)', lg: 'calc(100vh - 80px)' }}
                 bg='white'
                 gap={['32px', '32px', '32px', '40px', '40px']}
                 mt={{ base: '64px', md: '80px' }}
+                mb={{ base: '100px', sm: '92px', md: '0' }}
                 centerContent
             >
                 <AppRoutes />
             </Container>
+            <Footer />
         </>
     );
 }

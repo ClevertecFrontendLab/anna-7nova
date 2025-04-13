@@ -22,7 +22,7 @@ export const CustomIconButton: React.FC<IconButtonPropsType> = ({
         icon={
             <Flex alignItems='center'>
                 <IconSvg iconId={iconId} width='12' height='12' />
-                <Text color='brand.600' ml='6px'>
+                <Text variant='buttonTextNotification' color='brand.600' ml='6px'>
                     {number}
                 </Text>
             </Flex>

@@ -11,9 +11,10 @@ export type RateElementType = {
 
 export type RatePropsType = {
     rate: RateElementType | undefined;
+    style?: { flexDir: 'column' | 'row'; gap: string };
 };
 
-export const Rate: React.FC<RatePropsType> = ({ rate }: RatePropsType) => {
+export const Rate: React.FC<RatePropsType> = ({ rate, style }: RatePropsType) => {
     const saveValue =
         rate?.save !== undefined && rate?.save > 0 ? (
             <CustomIconButton ariaLabel='button icon save' iconId='save' number={rate.save} />
@@ -27,7 +28,7 @@ export const Rate: React.FC<RatePropsType> = ({ rate }: RatePropsType) => {
             <CustomIconButton ariaLabel='button icon like' iconId='like' number={rate.like} />
         ) : null;
     return (
-        <Flex>
+        <Flex flexDir={style?.flexDir} gap={style?.gap}>
             {saveValue}
             {peopleValue}
             {likesValue}

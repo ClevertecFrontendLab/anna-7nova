@@ -14,7 +14,6 @@ export const NavigationMenu: React.FC<NavigationMenuType> = ({ onClick }: Naviga
         top='80px'
         as='aside'
         overflowY='auto'
-        boxShadow='2xl'
         borderRadius='12px'
         w='256px'
         h='calc(100vh - 80px - 144px)'

@@ -19,8 +19,8 @@ export const IconSvg: React.FC<IconPropsType> = ({
         width={width || '16'}
         height={height || '16'}
         viewBox={viewBox || '0 0 16 16'}
-        fill='none'
         xmlns='http://www.w3.org/2000/svg'
+        fill='currentColor'
     >
         <use xlinkHref={`${iconsSprite}#${iconId}`} />
     </svg>

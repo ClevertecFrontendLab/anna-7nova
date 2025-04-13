@@ -14,6 +14,7 @@ export const theme = extendTheme({
         black: '#000',
         white: '#fff',
         blackAlpha: {
+            400: 'rgba(0, 0, 0, 0.24)',
             700: 'rgba(0, 0, 0, 0.64)',
         },
         grey: {
@@ -125,6 +126,17 @@ export const theme = extendTheme({
                     lineHeight: '133%',
                     p: { base: '8px', xl: '6px 12px' },
                 },
+                buttonTextNotification: {
+                    fontSize: { base: '12px', lg: '16px' },
+                    fontWeight: 600,
+                    lineHeight: '150%',
+                },
+                buttonMobileMenu: {
+                    fontSize: '12px',
+                    fontWeight: 400,
+                    lineHeight: '133%',
+                    color: 'rgba(0, 0, 0, 0.64)',
+                },
             },
         },
         FormLabel: {
@@ -147,7 +159,7 @@ export const theme = extendTheme({
                     p: { base: '4px 8px', xl: '6px 12px' },
                 },
                 buttonTextSmallest: {
-                    fontSize: { base: '12px', xl: '14px' },
+                    fontSize: '12px',
                     lineHeight: '133%',
                 },
             },
