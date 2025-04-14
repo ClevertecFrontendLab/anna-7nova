@@ -3,8 +3,8 @@ import { Box, Flex, IconButton, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react';
 
 import { blockNewReciepes } from '~/components/commonComponents/BlocksImages';
+import { category } from '~/components/commonComponents/CategoryData';
 
-import { category } from '../../../commonComponents/Category';
 import { NewRecipesCard } from './NewRecipesCard';
 
 export const NewRecipes: React.FC = () => {

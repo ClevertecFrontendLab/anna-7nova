@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Rate, RateElementType } from '~/components/commonComponents/Rate';
 
-import { PodCategoryType } from './Category';
+import { PodCategoryType } from './CategoryData';
 import { CategorySticker } from './CategorySticker';
 import { CustomCardBodyFull } from './CustomCardBodyFull';
 

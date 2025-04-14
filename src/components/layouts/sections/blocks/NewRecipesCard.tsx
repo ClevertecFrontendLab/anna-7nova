@@ -1,10 +1,10 @@
 import { Box, Card, Flex, Image, Stack } from '@chakra-ui/react';
 import React from 'react';
 
+import { PodCategoryType } from '~/components/commonComponents/CategoryData';
 import { CategorySticker } from '~/components/commonComponents/CategorySticker';
 import { Rate, RateElementType } from '~/components/commonComponents/Rate';
 
-import { PodCategoryType } from '../../../commonComponents/Category';
 import { CustomCardBodyFlex } from '../../../commonComponents/CustomCardBodyFlex';
 
 export type CardBodyType = {

@@ -2,7 +2,7 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 import { useParams } from 'react-router';
 
-import { category } from './Category';
+import { category } from './CategoryData';
 
 type TitleSectionMainPropsType = { propsTitle?: string; subtitle?: string };
 

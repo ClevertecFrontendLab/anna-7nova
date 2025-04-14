@@ -2,7 +2,7 @@ import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/r
 import React from 'react';
 
 import { ButtonMore } from '~/components/commonComponents/ButtonMore';
-import { category } from '~/components/commonComponents/Category';
+import { category } from '~/components/commonComponents/CategoryData';
 import { dataVeganRecipes } from '~/components/commonComponents/DataGeneralRecipes';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
 import { GeneralRecipes } from '~/components/layouts/sections/blocks/GeneralRecipes';

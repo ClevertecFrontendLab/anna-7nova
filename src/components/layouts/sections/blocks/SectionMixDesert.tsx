@@ -1,11 +1,11 @@
 import { Grid, GridItem, Text } from '@chakra-ui/react';
 import React from 'react';
 
+import { category } from '~/components/commonComponents/CategoryData';
 import { TitleSection } from '~/components/commonComponents/TitleSection';
 
 import { CardDesignBasic } from '../../../commonComponents/CardDesignBasic';
 import { CardDesignSmall } from '../../../commonComponents/CardDesignSmall';
-import { category } from '../../../commonComponents/Category';
 
 export const SectionMixDesert: React.FC = () => {
     const templateColumns = {

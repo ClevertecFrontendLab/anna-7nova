@@ -2,8 +2,8 @@ import { AccordionButton, AccordionItem, AccordionPanel, Box, Flex } from '@chak
 import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
+import { PodCategoryType } from '~/components/commonComponents/CategoryData';
 
-import { PodCategoryType } from '../../commonComponents/Category';
 import { CustomAccordionLink } from './CustomAccordionLink';
 
 type CustomAccordionItemPropsType = {
