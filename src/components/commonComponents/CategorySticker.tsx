@@ -15,7 +15,7 @@ export const CategorySticker: React.FC<CategoryPropsType> = ({
     text,
 }: CategoryPropsType) => {
     const currentText = text ? (
-        <Text variant='bigText' flexShrink={1} noOfLines={1} pl='0 8px'>
+        <Text variant='bigText' flexShrink={1} noOfLines={1} pl='12px'>
             {text}
         </Text>
     ) : (

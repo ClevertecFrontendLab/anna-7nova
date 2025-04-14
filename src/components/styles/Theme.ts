@@ -63,7 +63,6 @@ export const theme = extendTheme({
                     fontSize: { base: '24px', md: '32px', lg: '48px', xl: '48px' },
                     fontWeight: 700,
                     lineHeight: { base: '133%', lg: '100%' },
-                    margin: ['16px 0', '16px 0', '24px 0', '32px 0', '32px 0'],
                 },
                 h3: {
                     fontSize: { base: '24px', md: '30px', lg: '36px', xl: '48px' },
@@ -136,6 +135,18 @@ export const theme = extendTheme({
                     fontWeight: 400,
                     lineHeight: '133%',
                     color: 'rgba(0, 0, 0, 0.64)',
+                },
+                textSticker: {
+                    fontSize: '12px',
+                    fontWeight: 400,
+                    lineHeight: '133%',
+                    color: 'rgba(0, 0, 0, 0.64)',
+                },
+                textSubTitle: {
+                    fontSize: { base: '14px', lg: '16px' },
+                    fontWeight: 500,
+                    lineHeight: '150%',
+                    color: 'rgba(0, 0, 0, 0.48)',
                 },
             },
         },

@@ -16,6 +16,7 @@ export const Header: React.FC = () => {
     return (
         <Flex
             as='header'
+            data-test-id='header'
             position='fixed'
             w='100%'
             h={height}

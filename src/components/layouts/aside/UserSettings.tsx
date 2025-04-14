@@ -19,7 +19,10 @@ const UserSettings: React.FC = () => (
         justifyContent='space-between'
     >
         <Box padding='24px 0 16px 38px' height='200px'>
-            <UserNotifications style={{ flexDir: 'column', gap: '40px' }} />
+            <UserNotifications
+                style={{ flexDir: 'column', gap: '40px' }}
+                variant='buttonTextNotification'
+            />
         </Box>
         <Box
             display='flex'

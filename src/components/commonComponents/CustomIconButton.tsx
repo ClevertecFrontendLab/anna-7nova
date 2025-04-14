@@ -7,12 +7,14 @@ type IconButtonPropsType = {
     ariaLabel: string;
     iconId: string;
     number: number;
+    variant?: 'buttonTextNotification';
 };
 
 export const CustomIconButton: React.FC<IconButtonPropsType> = ({
     ariaLabel,
     iconId,
     number,
+    variant,
 }: IconButtonPropsType) => (
     <IconButton
         variant='ghost'
@@ -22,7 +24,7 @@ export const CustomIconButton: React.FC<IconButtonPropsType> = ({
         icon={
             <Flex alignItems='center'>
                 <IconSvg iconId={iconId} width='12' height='12' />
-                <Text variant='buttonTextNotification' color='brand.600' ml='6px'>
+                <Text variant={variant || 'textSticker'} color='brand.600' ml='6px'>
                     {number}
                 </Text>
             </Flex>

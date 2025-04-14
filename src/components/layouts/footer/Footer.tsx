@@ -47,6 +47,7 @@ export const Footer: React.FC = () => (
         </Box>
         <Grid
             as='footer'
+            data-test-id='footer'
             position='fixed'
             bottom='0'
             display={{ base: 'grid', md: 'none' }}
@@ -67,7 +68,7 @@ export const Footer: React.FC = () => (
             <GridItem colSpan={1}>
                 <Flex
                     h='100%'
-                    p='10px 0'
+                    p='15px 0 10px 0'
                     flexDir='column'
                     justifyContent='space-between'
                     alignItems='center'

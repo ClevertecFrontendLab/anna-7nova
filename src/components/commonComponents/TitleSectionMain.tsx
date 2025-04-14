@@ -19,11 +19,11 @@ export const TitleSectionMain: React.FC<TitleSectionMainPropsType> = ({
     const title = categoryData?.category || propsTitle || 'Приятного аппетита!';
 
     return (
-        <Box textAlign='center'>
+        <Box textAlign='center' padding={['16px 0', '16px 0', '24px 0', '32px 0', '32px 0']}>
             <Heading as='h2' size='h2'>
                 {title}
             </Heading>
-            <Text maxW='696px' mt='12px'>
+            <Text maxW='696px' pt='14px' variant='textSubTitle'>
                 {subtitle}
             </Text>
         </Box>

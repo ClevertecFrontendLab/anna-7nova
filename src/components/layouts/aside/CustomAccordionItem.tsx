@@ -15,13 +15,14 @@ export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
     category,
     onClick,
 }: CustomAccordionItemPropsType) => (
-    <AccordionItem m='0 10px' h='48px'>
+    <AccordionItem m='0 10px'>
         <AccordionButton
             as='h2'
             _hover={{ bg: 'brand.150' }}
             _expanded={{ bg: 'brand.100', fontWeight: '700' }}
             onClick={() => onClick(category.slug, category.subcategories[0].slug)}
             p='12px 16px 12px 6px'
+            h='47px'
             justifyContent='space-between'
         >
             <Flex>

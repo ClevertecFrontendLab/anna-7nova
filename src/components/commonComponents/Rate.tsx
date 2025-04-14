@@ -12,20 +12,36 @@ export type RateElementType = {
 export type RatePropsType = {
     rate: RateElementType | undefined;
     style?: { flexDir: 'column' | 'row'; gap: string };
+    variant?: 'buttonTextNotification';
 };
 
-export const Rate: React.FC<RatePropsType> = ({ rate, style }: RatePropsType) => {
+export const Rate: React.FC<RatePropsType> = ({ rate, style, variant }: RatePropsType) => {
     const saveValue =
         rate?.save !== undefined && rate?.save > 0 ? (
-            <CustomIconButton ariaLabel='button icon save' iconId='save' number={rate.save} />
+            <CustomIconButton
+                ariaLabel='button icon save'
+                iconId='save'
+                number={rate.save}
+                variant={variant}
+            />
         ) : null;
     const peopleValue =
         rate?.people !== undefined && rate?.people > 0 ? (
-            <CustomIconButton ariaLabel='button icon people' iconId='people' number={rate.people} />
+            <CustomIconButton
+                ariaLabel='button icon people'
+                iconId='people'
+                number={rate.people}
+                variant={variant}
+            />
         ) : null;
     const likesValue =
         rate?.like !== undefined && rate?.like > 0 ? (
-            <CustomIconButton ariaLabel='button icon like' iconId='like' number={rate.like} />
+            <CustomIconButton
+                ariaLabel='button icon like'
+                iconId='like'
+                number={rate.like}
+                variant={variant}
+            />
         ) : null;
     return (
         <Flex flexDir={style?.flexDir} gap={style?.gap}>

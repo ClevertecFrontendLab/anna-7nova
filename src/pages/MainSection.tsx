@@ -28,13 +28,17 @@ export const MainSection: React.FC = () => {
             <Box w='100%'>
                 <Flex justifyContent='space-between' alignItems='start'>
                     <TitleSection title='Самое сочное ' />
-                    <Box display={['none', 'none', 'none', 'block', 'block']}>
+                    <Box
+                        display={['none', 'none', 'block', 'block', 'block']}
+                        data-test-id='juiciest-link'
+                    >
                         <ButtonMore text='Вся подборка' onClick={() => navigate('/the-juiciest')} />
                     </Box>
                 </Flex>
                 <GeneralRecipes data={dataGeneralRecipes} />
                 <Box
-                    display={['flex', 'flex', 'flex', 'none', 'none']}
+                    display={['flex', 'flex', 'none', 'none', 'none']}
+                    data-test-id='juiciest-link-mobile'
                     w='100%'
                     justifyContent='center'
                     mt='12px'
