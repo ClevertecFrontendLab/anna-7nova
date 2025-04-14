@@ -19,6 +19,7 @@ export const SectionMixDesert: React.FC = () => {
         <Grid
             templateColumns={templateColumns}
             columnGap={{ base: '12px', md: '16px', lg: '24px' }}
+            rowGap={{ base: '12px', md: '0' }}
             w='100%'
             h='100%'
         >

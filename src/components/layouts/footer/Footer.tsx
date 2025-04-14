@@ -68,7 +68,7 @@ export const Footer: React.FC = () => (
             <GridItem colSpan={1}>
                 <Flex
                     h='100%'
-                    p='15px 0 10px 0'
+                    p='10px 0'
                     flexDir='column'
                     justifyContent='space-between'
                     alignItems='center'

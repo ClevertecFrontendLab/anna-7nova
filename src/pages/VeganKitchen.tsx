@@ -26,17 +26,16 @@ export const VeganKitchen: React.FC = () => (
                     overflowY='hidden'
                 >
                     {category.vegan.subcategories.map((el, i) => (
-                        <Tab key={i} minW='fit-content' flexShrink={0}>
+                        <Tab key={i} minW='fit-content' flexShrink={0} role='button' tabIndex={0}>
                             {el.name}
                         </Tab>
                     ))}
                 </TabList>
                 <TabPanels maxW='100%' w='100%'>
                     <TabPanel>
-                        <p>временно не заполнено</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>временно не заполнено</p>
+                        <Box w='100%' overflowX='auto'>
+                            <GeneralRecipes data={dataVeganRecipes} />
+                        </Box>
                     </TabPanel>
                     <TabPanel>
                         <Box w='100%' overflowX='auto'>
@@ -44,19 +43,34 @@ export const VeganKitchen: React.FC = () => (
                         </Box>
                     </TabPanel>
                     <TabPanel>
-                        <p>временно не заполнено</p>
+                        <Box w='100%' overflowX='auto'>
+                            <GeneralRecipes data={dataVeganRecipes} />
+                        </Box>
                     </TabPanel>
                     <TabPanel>
-                        <p>временно не заполнено</p>
+                        <Box w='100%' overflowX='auto'>
+                            <GeneralRecipes data={dataVeganRecipes} />
+                        </Box>
                     </TabPanel>
                     <TabPanel>
-                        <p>временно не заполнено</p>
+                        <Box w='100%' overflowX='auto'>
+                            <GeneralRecipes data={dataVeganRecipes} />
+                        </Box>
                     </TabPanel>
                     <TabPanel>
-                        <p>временно не заполнено</p>
+                        <Box w='100%' overflowX='auto'>
+                            <GeneralRecipes data={dataVeganRecipes} />
+                        </Box>
                     </TabPanel>
                     <TabPanel>
-                        <p>временно не заполнено</p>
+                        <Box w='100%' overflowX='auto'>
+                            <GeneralRecipes data={dataVeganRecipes} />
+                        </Box>
+                    </TabPanel>
+                    <TabPanel>
+                        <Box w='100%' overflowX='auto'>
+                            <GeneralRecipes data={dataVeganRecipes} />
+                        </Box>
                     </TabPanel>
                 </TabPanels>
             </Tabs>

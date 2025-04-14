@@ -20,7 +20,7 @@ export const CardDesignBasic: React.FC<CardDesignBasicPropsType> = ({
     category,
     rate,
 }: CardDesignBasicPropsType) => (
-    <GridItem colSpan={{ base: 3, sm: 1, md: 1, lg: 1, xl: 1 }}>
+    <GridItem colSpan={{ base: 3, sm: 1, md: 1, lg: 1, xl: 1 }} mb={{ base: '12px', md: '0' }}>
         <Card
             variant='outline'
             w='100%'

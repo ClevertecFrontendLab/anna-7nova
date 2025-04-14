@@ -15,7 +15,7 @@ export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
     category,
     onClick,
 }: CustomAccordionItemPropsType) => (
-    <AccordionItem m='0 10px'>
+    <AccordionItem m='0 10px' border='none' p='0'>
         <AccordionButton
             as='h2'
             _hover={{ bg: 'brand.150' }}

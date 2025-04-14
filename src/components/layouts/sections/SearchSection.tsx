@@ -32,6 +32,13 @@ export const SearchSection: React.FC = () => (
                     h={['32px', '32px', '40px', '48px', '48px']}
                     w={{ base: '284px', sm: '404px', md: '458px' }}
                     p={{ base: '7.5px 12px', lg: '13px 16px' }}
+                    sx={{
+                        '::placeholder': {
+                            color: 'brand.800',
+                            opacity: 1,
+                        },
+                        color: 'brand.800',
+                    }}
                 />
                 <InputRightElement>
                     <IconButton

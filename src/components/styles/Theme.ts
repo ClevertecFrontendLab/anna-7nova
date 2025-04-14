@@ -40,18 +40,24 @@ export const theme = extendTheme({
                     border: 'none',
                     borderRadius: 0,
                     _hover: {
-                        borderBottom: '2px solid',
+                        borderBottom: '4px solid',
                         borderColor: 'brand.600',
                         color: 'brand.600',
                     },
                     _selected: {
-                        borderBottom: '2px solid',
+                        borderBottom: '4px solid',
                         borderColor: 'brand.600',
                         color: 'brand.600',
                     },
                     _focus: {
-                        boxShadow: 'none',
-                        outline: 'none',
+                        borderBottom: '4px solid',
+                        borderColor: 'brand.600',
+                        color: 'brand.600',
+                        outline: '2px solid transparent',
+                    },
+                    _focusVisible: {
+                        borderBottom: '4px solid',
+                        borderColor: 'brand.300',
                     },
                     p: '9px 16px',
                 },

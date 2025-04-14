@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
 
-import { ButtonCircle } from '~/components/commonComponents/ButtonCircle';
+import { ButtonCircleSolid } from '~/components/commonComponents/ButtonCircleSolid';
 
 import { UserNotifications } from '../header/Account/UserNotifications';
 
@@ -31,7 +31,7 @@ const UserSettings: React.FC = () => (
             height='208px'
             background='radial-gradient(50% 50% at 50% 50%, #c4ff61 0%, rgba(255, 255, 255, 0) 100%)'
         >
-            <ButtonCircle title='Записать рецепт' iconId='add' />
+            <ButtonCircleSolid title='Записать рецепт' iconId='add' />
         </Box>
     </Box>
 );
