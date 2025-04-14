@@ -21,11 +21,12 @@ export const GeneralRecipes: React.FC<GeneralRecipesPropsType> = ({
         <Grid
             w='100%'
             templateColumns={templateColumns}
-            gap={{ base: '12px', sm: '16px', xl: '24px' }}
+            columnGap={{ base: '0', sm: '16px', xl: '24px' }}
+            rowGap={{ base: '16px', sm: '16px', lg: '16px' }}
         >
-            {data.map((el) => (
+            {data.map((el, i) => (
                 <GeneralRecipeCard
-                    key={el.title}
+                    key={i}
                     rate={el.rate}
                     title={el.title}
                     text={el.text}

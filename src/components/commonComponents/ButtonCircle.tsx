@@ -6,11 +6,13 @@ import { IconSvg } from '~/assets/images/icons/IconSvg';
 type ButtonCirclePropsType = {
     title: string;
     iconId: string;
+    isSelected: boolean;
 };
 
 export const ButtonCircle: React.FC<ButtonCirclePropsType> = ({
     title,
     iconId,
+    isSelected,
 }: ButtonCirclePropsType) => (
     <Flex
         role='group'
@@ -24,13 +26,16 @@ export const ButtonCircle: React.FC<ButtonCirclePropsType> = ({
         }}
     >
         <IconButton
-            h='48px'
-            w='48px'
             isRound
             variant='ghost'
             aria-label='Search'
-            color='black'
-            icon={<IconSvg iconId={iconId} width='24px' height='24px' viewBox='0 0 24 24' />}
+            icon={<IconSvg iconId={iconId} viewBox='0 0 24 24' height='24' width='24' />}
+            margin='auto'
+            bg={isSelected ? 'black' : 'transparent'}
+            color={isSelected ? 'white' : 'black'}
+            m={isSelected ? '4px' : '0'}
+            h={isSelected ? '40px' : '48px'}
+            w={isSelected ? '40px' : '48px'}
             _groupHover={{
                 bg: 'black',
                 color: 'white',
@@ -39,6 +44,8 @@ export const ButtonCircle: React.FC<ButtonCirclePropsType> = ({
         />
         <Text
             variant='buttonMobileMenu'
+            fontWeight={isSelected ? 'bold' : 'normal'}
+            color={isSelected ? 'black' : 'normal'}
             _groupHover={{
                 fontWeight: 'bold',
                 color: 'black',

@@ -19,7 +19,15 @@ export const CategorySticker: React.FC<CategoryPropsType> = ({
             {text}
         </Text>
     ) : (
-        <Text h='24px' pl={{ base: '2px', lg: '8px' }} whiteSpace='break-spaces'>
+        <Text
+            h='24px'
+            pl={{ base: '2px', lg: '8px' }}
+            whiteSpace='nowrap'
+            flexShrink={1}
+            overflow='hidden'
+            textOverflow='ellipsis'
+            letterSpacing={-0.2}
+        >
             {category.category}
         </Text>
     );
@@ -30,6 +38,7 @@ export const CategorySticker: React.FC<CategoryPropsType> = ({
                 display='flex'
                 alignItems='center'
                 borderRadius='4px'
+                whiteSpace='hidden'
                 p={{ base: '2px 4px', lg: '2px 8px' }}
             >
                 <img width='16px' height='16px' src={category.src} />

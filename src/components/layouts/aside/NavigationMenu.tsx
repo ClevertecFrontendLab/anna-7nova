@@ -19,9 +19,9 @@ export type NavigationMenuType = {
 };
 
 export const NavigationMenu: React.FC<NavigationMenuType> = ({ onClick }: NavigationMenuType) => {
+    //scroll
     const scrollRef = useRef<HTMLDivElement>(null);
     const [hasOverflow, setHasOverflow] = useState(false);
-
     useEffect(() => {
         const el = scrollRef.current;
         if (!el) return;
@@ -43,6 +43,8 @@ export const NavigationMenu: React.FC<NavigationMenuType> = ({ onClick }: Naviga
             resizeObserver.disconnect();
         };
     }, []);
+    //scroll
+
     return (
         <Box
             ref={scrollRef}
@@ -115,13 +117,86 @@ export const NavigationMenu: React.FC<NavigationMenuType> = ({ onClick }: Naviga
                     </AccordionButton>
                     <AccordionPanel>
                         <Flex flexDir='column'>
-                            {category.vegan.subcategories.map((el) => (
-                                <CustomAccordionLink
-                                    key={el.slug}
-                                    text={el.name}
-                                    onClick={() => onClick(category.vegan.slug, el.slug)}
-                                />
-                            ))}
+                            <CustomAccordionLink
+                                isSelected={false}
+                                text={category.vegan.subcategories[0].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[0].slug,
+                                    )
+                                }
+                            />
+                            <CustomAccordionLink
+                                isSelected={false}
+                                text={category.vegan.subcategories[1].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[1].slug,
+                                    )
+                                }
+                            />
+                            <CustomAccordionLink
+                                isSelected={true}
+                                text={category.vegan.subcategories[2].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[2].slug,
+                                    )
+                                }
+                            />
+                            <CustomAccordionLink
+                                isSelected={false}
+                                text={category.vegan.subcategories[3].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[3].slug,
+                                    )
+                                }
+                            />
+                            <CustomAccordionLink
+                                isSelected={false}
+                                text={category.vegan.subcategories[4].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[4].slug,
+                                    )
+                                }
+                            />
+                            <CustomAccordionLink
+                                isSelected={false}
+                                text={category.vegan.subcategories[5].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[5].slug,
+                                    )
+                                }
+                            />
+                            <CustomAccordionLink
+                                isSelected={false}
+                                text={category.vegan.subcategories[6].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[6].slug,
+                                    )
+                                }
+                            />
+                            <CustomAccordionLink
+                                isSelected={false}
+                                text={category.vegan.subcategories[7].name}
+                                onClick={() =>
+                                    onClick(
+                                        category.vegan.slug,
+                                        category.vegan.subcategories[7].slug,
+                                    )
+                                }
+                            />
                         </Flex>
                     </AccordionPanel>
                 </AccordionItem>

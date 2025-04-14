@@ -19,15 +19,18 @@ export const SectionMixDesert: React.FC = () => {
         <Grid
             templateColumns={templateColumns}
             columnGap={{ base: '12px', md: '16px', lg: '24px' }}
-            rowGap={{ base: '12px', md: '0' }}
+            rowGap={{ base: '12px', sm: '0px', lg: '15px', xl: '20px' }}
             w='100%'
             h='100%'
         >
-            <GridItem colSpan={{ base: 3, lg: 1, xl: 2 }} mt={{ lg: '24px' }}>
+            <GridItem
+                colSpan={{ base: 3, lg: 1, xl: 2 }}
+                pt={{ base: '10px', sm: '12px', lg: '24px' }}
+            >
                 <TitleSection title='Десерты, выпечка' />
             </GridItem>
-            <GridItem colSpan={{ base: 3, lg: 2, xl: 2 }} mt={{ lg: '24px' }}>
-                <Text variant='textSubTitle' pb='16px'>
+            <GridItem colSpan={{ base: 3, lg: 2, xl: 2 }}>
+                <Text variant='textSubTitle'>
                     Без них невозможно представить себе ни современную, ни традиционную кулинарию.
                     Пироги и печенья, блины, пончики, вареники и, конечно, хлеб - рецепты изделий из
                     теста многообразны и невероятно популярны.
@@ -37,8 +40,7 @@ export const SectionMixDesert: React.FC = () => {
                 rate={{ save: 1, like: 1 }}
                 category={category.child}
                 title='Бананово-молочное желе'
-                text='Молочное желе – это просто, вкусно и полезно, ведь для его приготовления в качестве основы используется молоко.
-'
+                text='Молочное желе – это просто, вкусно и полезно, ведь для его приготовления в качестве основы используется молоко.'
             />
             <CardDesignBasic
                 rate={{ save: 2, like: 1 }}

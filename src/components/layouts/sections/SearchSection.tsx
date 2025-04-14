@@ -16,8 +16,8 @@ import React from 'react';
 import { IconSvg } from '~/assets/images/icons/IconSvg';
 
 export const SearchSection: React.FC = () => (
-    <Box maxW='898px'>
-        <Flex justifyContent='center'>
+    <>
+        <Flex justifyContent='center' maxW={{ base: '100%', sm: '448px', lg: '518px' }}>
             <IconButton
                 variant='outline'
                 h={['32px', '32px', '40px', '48px', '48px']}
@@ -26,12 +26,12 @@ export const SearchSection: React.FC = () => (
                 aria-label='Filters button'
                 icon={<IconSvg iconId='filter' width='24px' height='24px' viewBox='0 0 24 24' />}
             />
-            <InputGroup minW='284px'>
+            <InputGroup minW='284px' h={['32px', '32px', '40px', '48px', '48px']}>
                 <Input
                     placeholder='Название или ингредиент...'
-                    h={['32px', '32px', '40px', '48px', '48px']}
+                    h='100%'
                     w={{ base: '284px', sm: '404px', md: '458px' }}
-                    p={{ base: '7.5px 12px', lg: '13px 16px' }}
+                    p={{ base: '7.5px 12px', sm: '0 12px', lg: '13px 16px' }}
                     sx={{
                         '::placeholder': {
                             color: 'brand.800',
@@ -40,10 +40,13 @@ export const SearchSection: React.FC = () => (
                         color: 'brand.800',
                     }}
                 />
-                <InputRightElement>
+                <InputRightElement h='100%'>
                     <IconButton
                         variant='ghost'
                         aria-label='Search database'
+                        h={['32px', '32px', '40px', '48px', '48px']}
+                        minW={['32px', '32px', '40px', '48px', '48px']}
+                        w={['32px', '32px', '40px', '48px', '48px']}
                         icon={<SearchIcon />}
                     />
                 </InputRightElement>
@@ -54,7 +57,7 @@ export const SearchSection: React.FC = () => (
                 display='flex'
                 alignItems='center'
                 justifyContent='space-around'
-                m='16px 0'
+                m='16px 0 0'
             >
                 <FormLabel m='0' flexGrow={1} whiteSpace='nowrap'>
                     Исключить мои аллергены
@@ -67,5 +70,5 @@ export const SearchSection: React.FC = () => (
                 </Select>
             </FormControl>
         </Box>
-    </Box>
+    </>
 );

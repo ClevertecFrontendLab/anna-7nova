@@ -17,7 +17,17 @@ export const MainSection: React.FC = () => {
     const navigate = useNavigate();
     return (
         <>
-            <Box display='flex' flexDir='column' alignItems='center'>
+            <Box
+                display='flex'
+                flexDir='column'
+                alignItems='center'
+                m={{
+                    base: '10px 20px 3px',
+                    sm: '16px 0',
+                    lg: '12px 105px 0',
+                    xl: '12px 890px 15px',
+                }}
+            >
                 <TitleSectionMain />
                 <SearchSection />
             </Box>
@@ -61,6 +71,7 @@ export const MainSection: React.FC = () => {
                 </Box>
             </Box>
             <Box w='100%'>
+                <hr />
                 <SectionMix />
             </Box>
         </>

@@ -57,13 +57,13 @@ export const Footer: React.FC = () => (
             h='84px'
         >
             <GridItem colSpan={1}>
-                <ButtonCircle title='Главная' iconId='home' />
+                <ButtonCircle isSelected={true} title='Главная' iconId='home' />
             </GridItem>
             <GridItem colSpan={1}>
-                <ButtonCircle title='Поиск' iconId='search' />
+                <ButtonCircle isSelected={false} title='Поиск' iconId='search' />
             </GridItem>
             <GridItem colSpan={1}>
-                <ButtonCircle title='Записать' iconId='add' />
+                <ButtonCircle isSelected={false} title='Записать' iconId='add' />
             </GridItem>
             <GridItem colSpan={1}>
                 <Flex

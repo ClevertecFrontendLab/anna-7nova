@@ -59,7 +59,6 @@ export const theme = extendTheme({
                         borderBottom: '4px solid',
                         borderColor: 'brand.300',
                     },
-                    p: '9px 16px',
                 },
             },
         },
@@ -69,12 +68,13 @@ export const theme = extendTheme({
                     fontSize: { base: '24px', md: '32px', lg: '48px', xl: '48px' },
                     fontWeight: 700,
                     lineHeight: { base: '133%', lg: '100%' },
+                    m: { sm: '0 0 15px 0' },
                 },
                 h3: {
                     fontSize: { base: '24px', md: '30px', lg: '36px', xl: '48px' },
                     fontWeight: 500,
                     lineHeight: '111%',
-                    margin: ['0 0 12px', '0 0 12px', '0 0 18px', '0 0 24px', '0 0 24px'],
+                    margin: ['0 0 12px ', '0 0 12px', '0 0 18px', '0 0 24px', '0 0 24px'],
                 },
                 h4: {
                     fontSize: { base: '24px', md: '28px', lg: '30px', xl: '36px' },
@@ -153,6 +153,7 @@ export const theme = extendTheme({
                     fontWeight: 500,
                     lineHeight: '150%',
                     color: 'rgba(0, 0, 0, 0.48)',
+                    m: { sm: '15px 0 ' },
                 },
             },
         },
@@ -165,7 +166,7 @@ export const theme = extendTheme({
         },
         Button: {
             baseStyle: {
-                fontSize: '14px',
+                fontSize: '16px',
                 fontWeight: 600,
                 lineHeight: '143%',
             },

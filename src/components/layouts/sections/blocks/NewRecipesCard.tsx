@@ -67,7 +67,7 @@ export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
             <Box
                 display={['block', 'block', 'block', 'none', 'none']}
                 position='absolute'
-                p='2px 0px 0 2px'
+                p='8px 0px 0 8px'
             >
                 <CategorySticker bgColor='brand.150' category={category} />
             </Box>

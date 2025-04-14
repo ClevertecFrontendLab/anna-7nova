@@ -16,7 +16,7 @@ function App() {
         base: '100%',
         md: 'calc(100vw - 530px)',
     });
-
+    //routing
     const navigate = useNavigate();
     const navigateHandle = (categorySlug: string, subcategorySlug?: string) => {
         if (subcategorySlug) {

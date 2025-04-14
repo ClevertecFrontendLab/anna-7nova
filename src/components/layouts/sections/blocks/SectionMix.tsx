@@ -19,14 +19,18 @@ export const SectionMix: React.FC = () => {
         <Grid
             templateColumns={templateColumns}
             columnGap={{ base: '12px', md: '16px', lg: '24px' }}
+            rowGap={{ base: '12px' }}
             w='100%'
             h='100%'
         >
-            <GridItem colSpan={{ base: 3, lg: 1, xl: 2 }} mt={{ lg: '24px' }}>
+            <GridItem
+                colSpan={{ base: 3, lg: 1, xl: 2 }}
+                mt={{ base: '10px', sm: '12px', lg: '24px' }}
+            >
                 <TitleSection title='Веганская кухня' />
             </GridItem>
-            <GridItem colSpan={{ base: 3, lg: 2, xl: 2 }} mt={{ lg: '24px' }}>
-                <Text pb='16px'>
+            <GridItem colSpan={{ base: 3, lg: 2, xl: 2 }} alignContent='center'>
+                <Text variant='textSubTitle'>
                     Интересны не только убеждённым вегетарианцам, но и тем, кто хочет попробовать
                     вегетарианскую диету и готовить вкусные вегетарианские блюда.
                 </Text>
