@@ -5,7 +5,7 @@ import { TitleSection } from '~/components/commonComponents/TitleSection';
 
 import { CardDesignBasic } from '../../../commonComponents/CardDesignBasic';
 import { CardDesignSmall } from '../../../commonComponents/CardDesignSmall';
-import { category } from '../../../commonComponents/category';
+import { category } from '../../../commonComponents/Category';
 
 export const SectionMix: React.FC = () => {
     const templateColumns = {

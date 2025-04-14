@@ -3,7 +3,7 @@ import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
 
-import { PodCategoryType } from '../../commonComponents/category';
+import { PodCategoryType } from '../../commonComponents/Category';
 import { CustomAccordionLink } from './CustomAccordionLink';
 
 type CustomAccordionItemPropsType = {

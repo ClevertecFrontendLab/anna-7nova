@@ -1,7 +1,7 @@
 import { Box, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import { PodCategoryType } from './category';
+import { PodCategoryType } from './Category';
 
 type CategoryPropsType = {
     bgColor?: string;

@@ -4,7 +4,7 @@ import React from 'react';
 import { CategorySticker } from '~/components/commonComponents/CategorySticker';
 import { Rate, RateElementType } from '~/components/commonComponents/Rate';
 
-import { PodCategoryType } from '../../../commonComponents/category';
+import { PodCategoryType } from '../../../commonComponents/Category';
 import { CustomCardBodyFlex } from '../../../commonComponents/CustomCardBodyFlex';
 
 export type CardBodyType = {

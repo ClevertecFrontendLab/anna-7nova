@@ -9,8 +9,8 @@ import {
 import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
+import { category } from '~/components/commonComponents/Category';
 
-import { category } from '../../commonComponents/category';
 import { CustomAccordionItem } from './CustomAccordionItem';
 import { CustomAccordionLink } from './CustomAccordionLink';
 

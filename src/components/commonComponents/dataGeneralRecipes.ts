@@ -1,5 +1,5 @@
-import { blockNewReciepes } from './blocksImages';
-import { category, PodCategoryType } from './category';
+import { blockNewReciepes } from './BlocksImages';
+import { category, PodCategoryType } from './Category';
 
 export type dataGeneralRecipesType = {
     rate: { save?: number; like?: number };

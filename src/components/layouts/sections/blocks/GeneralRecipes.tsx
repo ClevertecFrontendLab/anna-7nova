@@ -1,7 +1,7 @@
 import { Grid } from '@chakra-ui/react';
 import React from 'react';
 
-import { dataGeneralRecipesType } from '~/components/commonComponents/dataGeneralRecipes';
+import { dataGeneralRecipesType } from '~/components/commonComponents/DataGeneralRecipes';
 
 import { GeneralRecipeCard } from './GeneralRecipeCard';
 

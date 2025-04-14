@@ -1,7 +1,7 @@
 import { Button, Card, Flex } from '@chakra-ui/react';
 import React from 'react';
 
-import { PodCategoryType } from './category';
+import { PodCategoryType } from './Category';
 import { CategorySticker } from './CategorySticker';
 
 type CardDesignSmallPropsType = {

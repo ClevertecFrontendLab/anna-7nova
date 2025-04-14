@@ -4,7 +4,7 @@ import React from 'react';
 import { NavLink, useLocation } from 'react-router';
 
 import { navigationRoutes } from '~/app/router/routes';
-import { category } from '~/components/commonComponents/category';
+import { category } from '~/components/commonComponents/Category';
 
 const categoryNameBySlug: Record<string, string> = Object.values(category).reduce(
     (acc, item) => {
