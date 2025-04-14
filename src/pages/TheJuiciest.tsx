@@ -2,7 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 import { ButtonMore } from '~/components/commonComponents/ButtonMore';
-import { dataTheJuiciest } from '~/components/commonComponents/DataGeneralRecipes';
+import { dataTheJuiciest } from '~/components/commonComponents/DataRecipes';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
 import { GeneralRecipes } from '~/components/layouts/sections/blocks/GeneralRecipes';
 import { SectionMix } from '~/components/layouts/sections/blocks/SectionMix';

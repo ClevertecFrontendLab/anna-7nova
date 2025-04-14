@@ -3,7 +3,7 @@ import React from 'react';
 
 import { ButtonMore } from '~/components/commonComponents/ButtonMore';
 import { category } from '~/components/commonComponents/CategoryData';
-import { dataVeganRecipes } from '~/components/commonComponents/DataGeneralRecipes';
+import { dataVeganRecipes } from '~/components/commonComponents/DataRecipes';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
 import { GeneralRecipes } from '~/components/layouts/sections/blocks/GeneralRecipes';
 import { SectionMixDesert } from '~/components/layouts/sections/blocks/SectionMixDesert';

@@ -2,7 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import { dataGeneralRecipes } from '~/components/commonComponents/DataGeneralRecipes';
+import { dataGeneralRecipes } from '~/components/commonComponents/DataRecipes';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
 
 import { BlogCooking } from '../components/commonComponents/BlogCooking';
