@@ -1,32 +1,50 @@
 import './App.css';
 
-import { useState } from 'react';
+import { Box, Container, useBreakpointValue } from '@chakra-ui/react';
+import { useNavigate } from 'react-router';
 
-import reactLogo from '~/assets/react.svg';
-import { useGetPostsQuery } from '~/query/services/posts.ts';
+import { NavigationMenu } from '~/components/layouts/aside/NavigationMenu';
+import UserSettings from '~/components/layouts/aside/UserSettings';
+import { Footer } from '~/components/layouts/footer/Footer';
+import { Header } from '~/components/layouts/header/Header';
+
+import { AppRoutes } from './router/AppRoutes';
 
 function App() {
-    const [count, setCount] = useState(0);
-    const { data: _data, isLoading: _isLoading } = useGetPostsQuery();
-
+    //styles
+    const weight = useBreakpointValue({
+        base: '100%',
+        md: 'calc(100vw - 530px)',
+    });
+    //routing
+    const navigate = useNavigate();
+    const navigateHandle = (categorySlug: string, subcategorySlug?: string) => {
+        if (subcategorySlug) {
+            navigate(`/${categorySlug}/${subcategorySlug}`);
+        } else {
+            navigate(`/${categorySlug}`);
+        }
+    };
     return (
         <>
-            <div>
-                <a href='https://vite.dev' target='_blank'>
-                    <img src='/vite.svg' className='logo' alt='Vite logo' />
-                </a>
-                <a href='https://react.dev' target='_blank'>
-                    <img src={reactLogo} className='logo react' alt='React logo' />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className='card'>
-                <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-                <p>
-                    Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
+            <Header />
+            <Box display={{ base: 'none', md: 'block' }}>
+                <NavigationMenu onClick={navigateHandle} />
+                <UserSettings />
+            </Box>
+            <Container
+                as='section'
+                maxW={weight}
+                minH={{ base: 'calc(100vw -80px - 84px)', lg: 'calc(100vh - 80px)' }}
+                bg='white'
+                gap={['32px', '32px', '32px', '40px', '40px']}
+                mt={{ base: '64px', md: '80px' }}
+                mb={{ base: '100px', sm: '92px', md: '0' }}
+                centerContent
+            >
+                <AppRoutes />
+            </Container>
+            <Footer />
         </>
     );
 }
