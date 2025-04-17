@@ -12,22 +12,19 @@ import { GeneralRecipes } from '../components/layouts/sections/blocks/GeneralRec
 import { NewRecipes } from '../components/layouts/sections/blocks/NewRecipes';
 import { SectionMix } from '../components/layouts/sections/blocks/SectionMix';
 import { SearchSection } from '../components/layouts/sections/SearchSection';
+import {
+    blogContainer,
+    boxDesktopVisible,
+    boxMobileVisibleCenter,
+    boxTitleAndSearchPrimary,
+    flexRowBetweenStart,
+} from '../components/styles/Section.style';
 
 export const MainSection: React.FC = () => {
     const navigate = useNavigate();
     return (
         <>
-            <Box
-                display='flex'
-                flexDir='column'
-                alignItems='center'
-                m={{
-                    base: '10px 20px 3px',
-                    sm: '16px 0',
-                    lg: '12px 105px 0',
-                    xl: '12px 890px 15px',
-                }}
-            >
+            <Box sx={boxTitleAndSearchPrimary}>
                 <TitleSectionMain />
                 <SearchSection />
             </Box>
@@ -36,38 +33,27 @@ export const MainSection: React.FC = () => {
                 <NewRecipes />
             </Box>
             <Box w='100%'>
-                <Flex justifyContent='space-between' alignItems='start'>
+                <Flex sx={flexRowBetweenStart}>
                     <TitleSection title='Самое сочное ' />
-                    <Box
-                        display={['none', 'none', 'block', 'block', 'block']}
-                        data-test-id='juiciest-link'
-                    >
+                    <Box data-test-id='juiciest-link' sx={boxDesktopVisible}>
                         <ButtonMore text='Вся подборка' onClick={() => navigate('/the-juiciest')} />
                     </Box>
                 </Flex>
                 <GeneralRecipes data={dataGeneralRecipes} />
-                <Box
-                    display={['flex', 'flex', 'none', 'none', 'none']}
-                    data-test-id='juiciest-link-mobile'
-                    w='100%'
-                    justifyContent='center'
-                    mt='12px'
-                >
+                <Box data-test-id='juiciest-link-mobile' sx={boxMobileVisibleCenter}>
                     <ButtonMore text='Вся подборка' onClick={() => navigate('/the-juiciest')} />
                 </Box>
             </Box>
-            <Box w='100%' bg='brand.300' borderRadius='16px' p={{ base: '12px', lg: '24px' }}>
-                <Flex justifyContent='space-between' alignItems='start'>
+            <Box sx={blogContainer}>
+                <Flex sx={flexRowBetweenStart}>
                     <TitleSection size='h4' title='Кулинарные блоги' />
-                    <Box display={['none', 'none', 'none', 'block', 'block']}>
+                    <Box sx={boxDesktopVisible}>
                         <ButtonMore text='Все авторы' bg='brand.300' onClick={() => {}} />
                     </Box>
                 </Flex>
                 <BlogCooking />
-                <Box display={['block', 'block', 'block', 'none', 'none']}>
-                    <Box w='100%' display='flex' justifyContent='center' mt='12px'>
-                        <ButtonMore text='Все авторы' bg='brand.300' onClick={() => {}} />
-                    </Box>
+                <Box sx={boxMobileVisibleCenter}>
+                    <ButtonMore text='Все авторы' bg='brand.300' onClick={() => {}} />
                 </Box>
             </Box>
             <Box w='100%'>

@@ -39,6 +39,10 @@ export const theme = extendTheme({
                 tab: {
                     border: 'none',
                     borderRadius: 0,
+                    minW: 'fit-content',
+                    flexShrink: 0,
+                    tabIndex: 0,
+                    role: 'button',
                     _hover: {
                         borderBottom: '4px solid',
                         borderColor: 'brand.600',
@@ -68,7 +72,7 @@ export const theme = extendTheme({
                     fontSize: { base: '24px', md: '32px', lg: '48px', xl: '48px' },
                     fontWeight: 700,
                     lineHeight: { base: '133%', lg: '100%' },
-                    m: { sm: '0 0 15px 0' },
+                    m: { sm: '0 0 15px 0', lg: '0 0 35px 0', xl: '0 0 35px 0' },
                 },
                 h3: {
                     fontSize: { base: '24px', md: '30px', lg: '36px', xl: '48px' },
@@ -101,23 +105,35 @@ export const theme = extendTheme({
                 lineHeight: '143%',
             },
             variants: {
-                bigText: {
-                    fontSize: { base: '16px', lg: '18px', xl: '20px' },
-                    fontWeight: 500,
-                    lineHeight: '140%',
-                },
-                userName: {
-                    fontSize: { base: '16px', lg: '18px' },
-                    fontWeight: 500,
-                    lineHeight: '150%',
+                categorySticker: {
+                    h: '24px',
+                    pl: { base: '2px', lg: '8px' },
+                    whiteSpace: 'nowrap',
+                    flexShrink: 1,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    letterSpacing: -0.2,
                 },
                 userNickName: {
-                    color: ' blackAlpha.700',
+                    color: 'blackAlpha.700',
                 },
-                buttonText: {
-                    fontSize: { base: '16px', xl: '18px' },
-                    fontWeight: 600,
-                    lineHeight: '150%',
+                greyestSmallText: {
+                    fontSize: '12px',
+                    fontWeight: 500,
+                    lineHeight: '133%',
+                    color: 'blackAlpha.400',
+                },
+                greySmallText: {
+                    fontSize: '12px',
+                    fontWeight: 400,
+                    lineHeight: '133%',
+                    color: 'blackAlpha.700',
+                },
+                textSticker: {
+                    fontSize: '12px',
+                    fontWeight: 400,
+                    lineHeight: '133%',
+                    color: 'rgba(0, 0, 0, 0.64)',
                 },
                 buttonTextSmall: {
                     fontSize: { base: '12px', lg: '14px' },
@@ -136,24 +152,29 @@ export const theme = extendTheme({
                     fontWeight: 600,
                     lineHeight: '150%',
                 },
-                buttonMobileMenu: {
-                    fontSize: '12px',
-                    fontWeight: 400,
-                    lineHeight: '133%',
-                    color: 'rgba(0, 0, 0, 0.64)',
-                },
-                textSticker: {
-                    fontSize: '12px',
-                    fontWeight: 400,
-                    lineHeight: '133%',
-                    color: 'rgba(0, 0, 0, 0.64)',
-                },
                 textSubTitle: {
                     fontSize: { base: '14px', lg: '16px' },
                     fontWeight: 500,
                     lineHeight: '150%',
                     color: 'rgba(0, 0, 0, 0.48)',
-                    m: { sm: '15px 0 ' },
+                    p: { base: '15px 0 15px', sm: '0 0 15px ', lg: '0 0 25px', xl: '0 0 25px' },
+                },
+                bigText: {
+                    fontSize: { base: '16px', lg: '18px', xl: '20px' },
+                    fontWeight: 500,
+                    lineHeight: '140%',
+                    noOfLines: 1,
+                    pl: '12px',
+                },
+                userName: {
+                    fontSize: { base: '16px', lg: '18px' },
+                    fontWeight: 500,
+                    lineHeight: '150%',
+                },
+                buttonText: {
+                    fontSize: { base: '16px', xl: '18px' },
+                    fontWeight: 600,
+                    lineHeight: '150%',
                 },
             },
         },
@@ -169,26 +190,43 @@ export const theme = extendTheme({
                 fontSize: '16px',
                 fontWeight: 600,
                 lineHeight: '143%',
+                padding: { base: '4px 8px', lg: '6px 12px' },
             },
             variants: {
-                buttonTextSmall: {
+                buttonSolidSmall: {
                     fontSize: { base: '12px', lg: '14px' },
-                    lineHeight: '143%',
-                    p: { base: '4px 8px', xl: '6px 12px' },
+                    bg: 'black',
+                    _hover: { bg: 'brand.600', border: 'none' },
+                    color: 'white',
+                    height: { base: '24px', lg: '32px' },
+                    flexShrink: 0,
+                },
+                buttonOutlineSmall: {
+                    fontSize: { base: '12px', lg: '14px' },
+                    _hover: { bg: 'brand.150', border: 'none' },
+                    borderWidth: '1px',
+                    borderColor: 'blackAlpha.500',
+                    height: { base: '24px', lg: '32px' },
+                    minWidth: { base: '24px', lg: '32px' },
                 },
                 buttonTextSmallest: {
                     fontSize: '12px',
                     lineHeight: '133%',
+                    minW: '70px',
+                    h: '32px',
+                    padding: { base: '6px 8px', xl: '6px 12px' },
+                    _hover: { bg: 'brand.800', border: 'none', color: 'white' },
+                    color: 'brand.600',
+                    borderColor: 'brand.600',
+                    flexShrink: 0,
                 },
             },
         },
         IconButton: {
-            variants: {
-                buttonTextSmall: {
-                    fontSize: { base: '12px', lg: '14px' },
-                    fontWeight: 600,
-                    lineHeight: '143%',
-                },
+            baseStyle: {
+                fontSize: '16px',
+                fontWeight: 600,
+                lineHeight: '143%',
             },
         },
         Input: {
@@ -196,6 +234,13 @@ export const theme = extendTheme({
                 fontSize: { base: '14px', md: '16px', lg: '18px' },
                 fontWeight: 400,
                 lineHeight: '143%',
+            },
+        },
+        Breadcrumb: {
+            baseStyle: {
+                as: 'nav',
+                flexGrow: 1,
+                spacing: '8px',
             },
         },
     },

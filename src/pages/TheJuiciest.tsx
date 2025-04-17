@@ -8,20 +8,17 @@ import { GeneralRecipes } from '~/components/layouts/sections/blocks/GeneralReci
 import { SectionMix } from '~/components/layouts/sections/blocks/SectionMix';
 import { SearchSection } from '~/components/layouts/sections/SearchSection';
 
+import { boxTitleAndSearchSecondary, flexRowCenter } from '../components/styles/Section.style';
+
 export const TheJuiciest: React.FC = () => (
     <>
-        <Box
-            display='flex'
-            flexDir='column'
-            alignItems='center'
-            m={{ base: '0 ', sm: '16px 0 0', lg: '0 105px ', xl: '0 290px' }}
-        >
+        <Box sx={boxTitleAndSearchSecondary}>
             <TitleSectionMain propsTitle='Самое сочное' />
             <SearchSection />
         </Box>
         <Box w='100%'>
             <GeneralRecipes data={dataTheJuiciest} />
-            <Flex justifyContent='center' pt='16px'>
+            <Flex sx={flexRowCenter}>
                 <ButtonLoadMore />
             </Flex>
         </Box>

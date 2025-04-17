@@ -29,12 +29,7 @@ export const NavMenu: React.FC = () => {
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter((x) => x);
     return (
-        <Breadcrumb
-            as='nav'
-            flexGrow={1}
-            spacing='8px'
-            separator={<ChevronRightIcon color='gray.800' />}
-        >
+        <Breadcrumb separator={<ChevronRightIcon color='gray.800' />}>
             <BreadcrumbItem>
                 <BreadcrumbLink
                     as={NavLink}

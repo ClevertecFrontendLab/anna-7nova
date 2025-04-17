@@ -3,38 +3,22 @@ import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
 import { ButtonCircle } from '~/components/commonComponents/ButtonCircle';
+import { avatarContainer, boxHeader, gridContainer } from '~/components/styles/Footer.style';
 
 import avatar from '../../../assets/images/avatar.png';
 
 export const Footer: React.FC = () => (
     <>
-        <Box
-            as='footer'
-            position='fixed'
-            bottom='0'
-            display={{ base: 'none', md: 'flex' }}
-            flexDir='column'
-            alignItems='start'
-            gap='16px'
-            maxW='256px'
-            w='256px'
-            h='144px'
-            p='0 24px'
-            bgColor='white'
-        >
-            <Text color='blackAlpha.400' fontWeight='500' fontSize='12px' lineHeight='133%'>
-                Версия программы 03.25
-            </Text>
-            <Text color='blackAlpha.700' fontWeight='400' fontSize='12px' lineHeight='133%'>
+        <Box as='footer' sx={boxHeader}>
+            <Text variant='greyestSmallText'>Версия программы 03.25</Text>
+            <Text variant='greySmallText'>
                 Все права защищены, ученический файл, <br /> ©Клевер Технолоджи, 2025
             </Text>
             <IconButton
                 border='none'
                 bg='transparent'
-                h='16px'
                 _hover={{ bg: 'brand.150', border: 'none' }}
-                borderColor='blackAlpha.500'
-                aria-label='Save Button'
+                aria-label='Exit'
                 icon={
                     <Flex alignItems='center'>
                         <IconSvg iconId='exit' width='16px' height='16px' />
@@ -45,36 +29,20 @@ export const Footer: React.FC = () => (
                 }
             />
         </Box>
-        <Grid
-            as='footer'
-            data-test-id='footer'
-            position='fixed'
-            bottom='0'
-            display={{ base: 'grid', md: 'none' }}
-            templateColumns='repeat(4, 1fr)'
-            bgColor='brand.50'
-            w='100%'
-            h='84px'
-        >
+        <Grid as='footer' data-test-id='footer' sx={gridContainer}>
             <GridItem colSpan={1}>
-                <ButtonCircle isSelected={true} title='Главная' iconId='home' />
+                <ButtonCircle isSelected={true} title='Главная' iconId='home' ariaLabel='Home' />
             </GridItem>
             <GridItem colSpan={1}>
-                <ButtonCircle isSelected={false} title='Поиск' iconId='search' />
+                <ButtonCircle isSelected={false} title='Поиск' iconId='search' ariaLabel='Search' />
             </GridItem>
             <GridItem colSpan={1}>
-                <ButtonCircle isSelected={false} title='Записать' iconId='add' />
+                <ButtonCircle isSelected={false} title='Записать' iconId='add' ariaLabel='Notice' />
             </GridItem>
             <GridItem colSpan={1}>
-                <Flex
-                    h='100%'
-                    p='10px 0'
-                    flexDir='column'
-                    justifyContent='space-between'
-                    alignItems='center'
-                >
+                <Flex sx={avatarContainer}>
                     <Avatar h='40px' w='40px' name='Аватар пользователя' src={avatar} m='4px' />
-                    <Text variant='buttonMobileMenu'>Мой профиль</Text>
+                    <Text variant='greySmallText'>Мой профиль</Text>
                 </Flex>
             </GridItem>
         </Grid>

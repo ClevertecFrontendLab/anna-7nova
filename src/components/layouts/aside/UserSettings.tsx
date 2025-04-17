@@ -2,35 +2,23 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 import { ButtonCircleSolid } from '~/components/commonComponents/ButtonCircleSolid';
+import {
+    boxStickerContainer,
+    shadow,
+    userSettingsContainer,
+} from '~/components/styles/Aside.style';
 
 import { UserNotifications } from '../header/Account/UserNotifications';
 
 const UserSettings: React.FC = () => (
-    <Box
-        position='fixed'
-        top='80px'
-        right='0'
-        as='aside'
-        w='208px'
-        h='calc(100vh - 80px)'
-        bgColor='white'
-        display='flex'
-        flexDir='column'
-        justifyContent='space-between'
-    >
-        <Box padding='24px 0 16px 38px' height='200px'>
+    <Box as='aside' sx={userSettingsContainer}>
+        <Box sx={boxStickerContainer}>
             <UserNotifications
                 style={{ flexDir: 'column', gap: '40px' }}
                 variant='buttonTextNotification'
             />
         </Box>
-        <Box
-            display='flex'
-            justifyContent='center'
-            alignItems='center'
-            height='208px'
-            background='radial-gradient(50% 50% at 50% 50%, #c4ff61 0%, rgba(255, 255, 255, 0) 100%)'
-        >
+        <Box sx={shadow}>
             <ButtonCircleSolid title='Записать рецепт' iconId='add' />
         </Box>
     </Box>

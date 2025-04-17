@@ -1,8 +1,15 @@
-import { AccordionButton, AccordionItem, AccordionPanel, Box, Flex } from '@chakra-ui/react';
+import {
+    AccordionButton,
+    AccordionPanel,
+    Box,
+    Flex,
+    useAccordionItemState,
+} from '@chakra-ui/react';
 import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
 import { PodCategoryType } from '~/components/commonComponents/CategoryData';
+import { accordionButtonStyle } from '~/components/styles/Aside.style';
 
 import { CustomAccordionLink } from './CustomAccordionLink';
 
@@ -14,35 +21,86 @@ type CustomAccordionItemPropsType = {
 export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
     category,
     onClick,
-}: CustomAccordionItemPropsType) => (
-    <AccordionItem m='0 10px' border='none' p='0'>
-        <AccordionButton
-            as='h2'
-            _hover={{ bg: 'brand.150' }}
-            _expanded={{ bg: 'brand.100', fontWeight: '700' }}
-            onClick={() => onClick(category.slug, category.subcategories[0].slug)}
-            p='12px 16px 12px 6px'
-            h='47px'
-            justifyContent='space-between'
-        >
-            <Flex>
-                <img src={category.src} />
-                <Box as='span' textAlign='left' ml='12px'>
-                    {category.category}
-                </Box>
-            </Flex>
-            <IconSvg iconId='accordionArrow' width='14px' height='8px' viewBox='0 0 14 8' />
-        </AccordionButton>
-        <AccordionPanel>
-            <Flex flexDir='column'>
-                {category.subcategories.map((el) => (
+}: CustomAccordionItemPropsType) => {
+    //accordion state
+    const { isOpen } = useAccordionItemState();
+
+    return (
+        <>
+            <AccordionButton
+                as='h2'
+                sx={accordionButtonStyle}
+                onClick={() => onClick(category.slug, category.subcategories[0].slug)}
+            >
+                <Flex>
+                    <img src={category.src} />
+                    <Box as='span' textAlign='left' ml='12px'>
+                        {category.category}
+                    </Box>
+                </Flex>
+                <IconSvg
+                    iconId='accordionArrow'
+                    width='14px'
+                    height='8px'
+                    viewBox='0 0 14 8'
+                    style={{
+                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.2s ease',
+                    }}
+                />
+            </AccordionButton>
+            <AccordionPanel>
+                <Flex flexDir='column'>
+                    {/* {category.subcategories.map((el) => (
+                        <CustomAccordionLink
+                            key={el.slug}
+                            text={el.name}
+                            isSelected={false} //тут нужно откорректирвоать
+                            onClick={() => onClick(category.slug, el.slug)}
+                        />
+                    ))} */}
                     <CustomAccordionLink
-                        key={el.slug}
-                        text={el.name}
-                        onClick={() => onClick(category.slug, el.slug)}
+                        isSelected={false}
+                        text={category.subcategories[0].name}
+                        onClick={() => onClick(category.slug, category.subcategories[0].slug)}
                     />
-                ))}
-            </Flex>
-        </AccordionPanel>
-    </AccordionItem>
-);
+                    <CustomAccordionLink
+                        isSelected={false}
+                        text={category.subcategories[1].name}
+                        onClick={() => onClick(category.slug, category.subcategories[1].slug)}
+                    />
+                    <CustomAccordionLink
+                        isSelected={true}
+                        text={category.subcategories[2].name}
+                        onClick={() => onClick(category.slug, category.subcategories[2].slug)}
+                    />
+                    <CustomAccordionLink
+                        isSelected={false}
+                        text={category.subcategories[3].name}
+                        onClick={() => onClick(category.slug, category.subcategories[3].slug)}
+                    />
+                    <CustomAccordionLink
+                        isSelected={false}
+                        text={category.subcategories[4].name}
+                        onClick={() => onClick(category.slug, category.subcategories[4].slug)}
+                    />
+                    <CustomAccordionLink
+                        isSelected={false}
+                        text={category.subcategories[5].name}
+                        onClick={() => onClick(category.slug, category.subcategories[5].slug)}
+                    />
+                    <CustomAccordionLink
+                        isSelected={false}
+                        text={category.subcategories[6].name}
+                        onClick={() => onClick(category.slug, category.subcategories[6].slug)}
+                    />
+                    <CustomAccordionLink
+                        isSelected={false}
+                        text={category.subcategories[7].name}
+                        onClick={() => onClick(category.slug, category.subcategories[7].slug)}
+                    />
+                </Flex>
+            </AccordionPanel>
+        </>
+    );
+};

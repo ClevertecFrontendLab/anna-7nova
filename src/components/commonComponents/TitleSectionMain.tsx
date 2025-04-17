@@ -19,12 +19,7 @@ export const TitleSectionMain: React.FC<TitleSectionMainPropsType> = ({
     const title = categoryData?.category || propsTitle || 'Приятного аппетита!';
 
     return (
-        <Box
-            display='flex'
-            flexDir='column'
-            textAlign='center'
-            padding={['16px 10px', '0', '24px 0', '30px 0 15px', '32px 0 16px 0']}
-        >
+        <Box display='flex' flexDir='column' textAlign='center'>
             <Heading as='h2' size='h2'>
                 {title}
             </Heading>

@@ -1,8 +1,9 @@
-import { Card, Flex, GridItem } from '@chakra-ui/react';
+import { Card, Flex } from '@chakra-ui/react';
 import React from 'react';
 
 import { Rate, RateElementType } from '~/components/commonComponents/Rate';
 
+import { gridItemCardBasic, sticker } from '../styles/Section.style';
 import { PodCategoryType } from './CategoryData';
 import { CategorySticker } from './CategorySticker';
 import { CustomCardBodyFull } from './CustomCardBodyFull';
@@ -20,20 +21,11 @@ export const CardDesignBasic: React.FC<CardDesignBasicPropsType> = ({
     category,
     rate,
 }: CardDesignBasicPropsType) => (
-    <GridItem colSpan={{ base: 3, sm: 1, md: 1, lg: 1, xl: 1 }}>
-        <Card
-            variant='outline'
-            w='100%'
-            gap='24px'
-            p={{ base: '12px', md: '16px', xl: '24px' }}
-            h='100%'
-            justifyContent='space-between'
-        >
-            <CustomCardBodyFull title={title} text={text} />
-            <Flex justifyContent='space-between' alignItems='center' wrap='wrap'>
-                <CategorySticker category={category} />
-                <Rate rate={rate} />
-            </Flex>
-        </Card>
-    </GridItem>
+    <Card sx={gridItemCardBasic}>
+        <CustomCardBodyFull title={title} text={text} />
+        <Flex sx={sticker}>
+            <CategorySticker category={category} width='16px' height='16px' />
+            <Rate rate={rate} />
+        </Flex>
+    </Card>
 );

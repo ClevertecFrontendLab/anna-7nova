@@ -10,6 +10,12 @@ import { GeneralRecipes } from '~/components/layouts/sections/blocks/GeneralReci
 import { SectionMixDesert } from '~/components/layouts/sections/blocks/SectionMixDesert';
 import { SearchSection } from '~/components/layouts/sections/SearchSection';
 
+import {
+    boxTitleAndSearchSecondary,
+    flexRowCenter,
+    tabListOverflowHidden,
+} from '../components/styles/Section.style';
+
 export const VeganKitchen: React.FC = () => {
     const { subcategorySlug } = useParams();
     const navigate = useNavigate();
@@ -36,83 +42,61 @@ export const VeganKitchen: React.FC = () => {
     };
     return (
         <>
-            <Box
-                display='flex'
-                flexDir='column'
-                alignItems='center'
-                m={{ base: '0 ', sm: '16px 0 0', lg: '0 105px ', xl: '0 290px' }}
-            >
+            <Box sx={boxTitleAndSearchSecondary}>
                 <TitleSectionMain subtitle='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.' />
                 <SearchSection />
             </Box>
             <Box w='100%'>
                 <Tabs index={tabIndex} onChange={handleTabChange} variant='line' isLazy>
-                    <TabList
-                        overflowX='hidden'
-                        whiteSpace='nowrap'
-                        maxW='100%'
-                        h='30px'
-                        mb='24px'
-                        justifyContent='center'
-                        color='brand.800'
-                        overflowY='hidden'
-                    >
+                    <TabList sx={tabListOverflowHidden}>
                         {category.vegan.subcategories.map((el, i) => (
-                            <Tab
-                                key={i}
-                                minW='fit-content'
-                                flexShrink={0}
-                                role='button'
-                                tabIndex={0}
-                            >
-                                {el.name}
-                            </Tab>
+                            <Tab key={i}>{el.name}</Tab>
                         ))}
                     </TabList>
                     <TabPanels maxW='100%' w='100%'>
                         <TabPanel p={0}>
-                            <Box w='100%'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
-                            <Box w='100%' overflowX='auto'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
-                            <Box w='100%' overflowX='auto'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
-                            <Box w='100%' overflowX='auto'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
-                            <Box w='100%' overflowX='auto'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
-                            <Box w='100%' overflowX='auto'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
-                            <Box w='100%' overflowX='auto'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
-                            <Box w='100%' overflowX='auto'>
+                            <Box>
                                 <GeneralRecipes data={dataVeganRecipes} />
                             </Box>
                         </TabPanel>
                     </TabPanels>
                 </Tabs>
-                <Flex justifyContent='center' mt='16px'>
+                <Flex sx={flexRowCenter}>
                     <ButtonLoadMore />
                 </Flex>
             </Box>

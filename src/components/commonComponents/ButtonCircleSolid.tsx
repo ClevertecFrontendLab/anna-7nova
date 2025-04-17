@@ -3,6 +3,9 @@ import React from 'react';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
 
+import { iconButton } from '../styles/Aside.style';
+import { buttonContainer } from '../styles/Footer.style';
+
 type ButtonCirclePropsType = {
     title: string;
     iconId: string;
@@ -12,35 +15,15 @@ export const ButtonCircleSolid: React.FC<ButtonCirclePropsType> = ({
     title,
     iconId,
 }: ButtonCirclePropsType) => (
-    <Flex
-        role='group'
-        flexDir='column'
-        justifyContent='space-between'
-        alignItems='center'
-        p='10px 0'
-        cursor='pointer'
-        _hover={{
-            bg: 'transparent',
-        }}
-    >
+    <Flex role='group' sx={buttonContainer}>
         <IconButton
-            h='48px'
-            w='48px'
             isRound
-            variant='solid'
-            bg='black'
-            color='white'
-            aria-label='Search'
+            aria-label='Notice'
             icon={<IconSvg iconId={iconId} width='24px' height='24px' viewBox='0 0 24 24' />}
-            _groupHover={{
-                bg: 'transparent',
-                outline: 'none',
-                color: 'black',
-                transform: 'scale(0.67)',
-            }}
+            sx={iconButton}
         />
         <Text
-            variant='buttonMobileMenu'
+            variant='greySmallText'
             pt='12px'
             _groupHover={{
                 fontWeight: 'bold',
