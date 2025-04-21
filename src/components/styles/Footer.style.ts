@@ -1,4 +1,4 @@
-export const boxHeader = {
+export const boxFooter = {
     position: 'fixed',
     bottom: '0',
     display: { base: 'none', md: 'flex' },
@@ -10,6 +10,18 @@ export const boxHeader = {
     h: '144px',
     p: '0 24px',
     bgColor: 'white',
+    zIndex: 2,
+};
+
+export const boxFooterMobile = {
+    display: { base: 'flex', md: 'none' },
+    flexDir: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'start',
+    gap: '16px',
+    w: '100%',
+    h: '144px',
+    p: '16px 24px 32px',
 };
 
 //mobile footer

@@ -1,13 +1,13 @@
 import './App.css';
 
-import { Box, Container } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 
-import { NavigationMenu } from '~/components/layouts/aside/NavigationMenu';
-import UserSettings from '~/components/layouts/aside/UserSettings';
+import { Aside } from '~/components/layouts/aside/Aside';
 import { Footer } from '~/components/layouts/footer/Footer';
 import { Header } from '~/components/layouts/header/Header';
-import { boxDesktopVisible, mainContainer } from '~/components/styles/Section.style';
+import { mainContainer } from '~/components/styles/Section.style';
 
 import { AppRoutes } from './router/AppRoutes';
 
@@ -15,20 +15,26 @@ function App() {
     //routing
     const navigate = useNavigate();
     const navigateHandle = (categorySlug: string, subcategorySlug?: string) => {
-        if (subcategorySlug) {
-            navigate(`/${categorySlug}/${subcategorySlug}`);
-        } else {
-            navigate(`/${categorySlug}`);
-        }
+        subcategorySlug
+            ? navigate(`/${categorySlug}/${subcategorySlug}`)
+            : navigate(`/${categorySlug}/snacks`);
     };
+    //mobile menu
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const onBurgerBtnClick = () => {
+        setMenuIsOpen(!menuIsOpen);
+    };
+    //modal - hide scroll
+    useEffect(() => {
+        menuIsOpen
+            ? (document.body.style.overflow = 'hidden')
+            : (document.body.style.overflow = '');
+    }, [menuIsOpen]);
     return (
         <>
-            <Header />
-            <Box sx={boxDesktopVisible}>
-                <NavigationMenu onClick={navigateHandle} />
-                <UserSettings />
-            </Box>
-            <Container sx={mainContainer} centerContent>
+            <Header onBurgerBtnClick={onBurgerBtnClick} menuIsOpen={menuIsOpen} />
+            <Aside onClick={navigateHandle} menuIsOpen={menuIsOpen} />
+            <Container as='section' sx={mainContainer} centerContent>
                 <AppRoutes />
             </Container>
             <Footer />

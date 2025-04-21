@@ -1,6 +1,6 @@
 import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 
 import { ButtonLoadMore } from '~/components/commonComponents/ButtonLoadMore';
 import { category } from '~/components/commonComponents/CategoryData';
@@ -17,23 +17,21 @@ import {
 } from '../components/styles/Section.style';
 
 export const VeganKitchen: React.FC = () => {
-    const { subcategorySlug } = useParams();
     const navigate = useNavigate();
-
-    const [tabIndex, setTabIndex] = useState(2);
+    const location = useLocation();
+    const pathnames = location.pathname.split('/').filter((x) => x);
+    const [tabIndex, setTabIndex] = useState(0);
 
     // 1. Обновляем индекс таба при изменении URL
     useEffect(() => {
-        if (subcategorySlug) {
-            const index = category.vegan.subcategories.findIndex(
-                (sub) => sub.slug === subcategorySlug,
-            );
+        if (pathnames[1]) {
+            const index = category.vegan.subcategories.findIndex((el) => el.slug === pathnames[1]);
             setTabIndex(index !== -1 ? index : 0);
         }
-    }, [subcategorySlug]);
+    }, [pathnames]);
 
     // 2. При клике на таб — меняем URL
-    const handleTabChange = (index: number) => {
+    const onChangeTabHandler = (index: number) => {
         setTabIndex(index);
         const sub = category.vegan.subcategories[index];
         if (sub) {
@@ -47,7 +45,7 @@ export const VeganKitchen: React.FC = () => {
                 <SearchSection />
             </Box>
             <Box w='100%'>
-                <Tabs index={tabIndex} onChange={handleTabChange} variant='line' isLazy>
+                <Tabs index={tabIndex} onChange={onChangeTabHandler} variant='line' isLazy>
                     <TabList sx={tabListOverflowHidden}>
                         {category.vegan.subcategories.map((el, i) => (
                             <Tab key={i}>{el.name}</Tab>

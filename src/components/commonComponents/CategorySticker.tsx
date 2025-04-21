@@ -5,18 +5,19 @@ import { boxCategorySticker } from '../styles/Section.style';
 import { PodCategoryType } from './CategoryData';
 
 type CategoryPropsType = {
-    bgColor?: string;
     category: PodCategoryType;
+    bgColor?: string;
     text?: string;
     width?: string;
     height?: string;
 };
 
 export const CategorySticker: React.FC<CategoryPropsType> = ({
-    bgColor,
     category,
+    bgColor,
     text,
     width,
+    height,
 }: CategoryPropsType) => {
     const currentText = text ? (
         <Text variant='bigText'>{text}</Text>
@@ -26,7 +27,7 @@ export const CategorySticker: React.FC<CategoryPropsType> = ({
     return (
         <>
             <Box sx={boxCategorySticker} bg={bgColor || 'brand.50'}>
-                <img width={width || '24px'} height={width || '24px'} src={category.src} />
+                <img width={width || '24px'} height={height || '24px'} src={category.src} />
                 {currentText}
             </Box>
         </>

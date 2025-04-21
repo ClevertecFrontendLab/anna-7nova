@@ -61,7 +61,7 @@ export const category: CategoryType = {
         slug: 'secondMeal',
         subcategories: subcategories,
     },
-    desert: {
+    dessert: {
         category: 'Десерты, выпечка',
         src: desert,
         slug: 'desert',

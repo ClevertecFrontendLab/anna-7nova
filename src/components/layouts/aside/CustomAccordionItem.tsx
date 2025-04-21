@@ -6,6 +6,7 @@ import {
     useAccordionItemState,
 } from '@chakra-ui/react';
 import React from 'react';
+import { useLocation } from 'react-router';
 
 import { IconSvg } from '~/assets/images/icons/IconSvg';
 import { PodCategoryType } from '~/components/commonComponents/CategoryData';
@@ -24,13 +25,14 @@ export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
 }: CustomAccordionItemPropsType) => {
     //accordion state
     const { isOpen } = useAccordionItemState();
-
+    //routing
+    const location = useLocation();
     return (
         <>
             <AccordionButton
                 as='h2'
                 sx={accordionButtonStyle}
-                onClick={() => onClick(category.slug, category.subcategories[0].slug)}
+                onClick={() => onClick(category.slug)}
             >
                 <Flex>
                     <img src={category.src} />
@@ -51,54 +53,14 @@ export const CustomAccordionItem: React.FC<CustomAccordionItemPropsType> = ({
             </AccordionButton>
             <AccordionPanel>
                 <Flex flexDir='column'>
-                    {/* {category.subcategories.map((el) => (
+                    {category.subcategories.map((el) => (
                         <CustomAccordionLink
                             key={el.slug}
                             text={el.name}
-                            isSelected={false} //тут нужно откорректирвоать
+                            isSelected={location.pathname === `/${category.slug}/${el.slug}`}
                             onClick={() => onClick(category.slug, el.slug)}
                         />
-                    ))} */}
-                    <CustomAccordionLink
-                        isSelected={false}
-                        text={category.subcategories[0].name}
-                        onClick={() => onClick(category.slug, category.subcategories[0].slug)}
-                    />
-                    <CustomAccordionLink
-                        isSelected={false}
-                        text={category.subcategories[1].name}
-                        onClick={() => onClick(category.slug, category.subcategories[1].slug)}
-                    />
-                    <CustomAccordionLink
-                        isSelected={true}
-                        text={category.subcategories[2].name}
-                        onClick={() => onClick(category.slug, category.subcategories[2].slug)}
-                    />
-                    <CustomAccordionLink
-                        isSelected={false}
-                        text={category.subcategories[3].name}
-                        onClick={() => onClick(category.slug, category.subcategories[3].slug)}
-                    />
-                    <CustomAccordionLink
-                        isSelected={false}
-                        text={category.subcategories[4].name}
-                        onClick={() => onClick(category.slug, category.subcategories[4].slug)}
-                    />
-                    <CustomAccordionLink
-                        isSelected={false}
-                        text={category.subcategories[5].name}
-                        onClick={() => onClick(category.slug, category.subcategories[5].slug)}
-                    />
-                    <CustomAccordionLink
-                        isSelected={false}
-                        text={category.subcategories[6].name}
-                        onClick={() => onClick(category.slug, category.subcategories[6].slug)}
-                    />
-                    <CustomAccordionLink
-                        isSelected={false}
-                        text={category.subcategories[7].name}
-                        onClick={() => onClick(category.slug, category.subcategories[7].slug)}
-                    />
+                    ))}
                 </Flex>
             </AccordionPanel>
         </>

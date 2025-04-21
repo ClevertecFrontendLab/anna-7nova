@@ -312,3 +312,52 @@ export const gridItemCardSmall = {
     w: '100%',
     p: { base: '8px', sm: '10px 12px', xl: '12px 24px' },
 };
+//Navigation
+export const navDesktopContainer = {
+    display: ['none', 'none', 'block', 'block', 'block'],
+    position: 'fixed',
+    zIndex: 2,
+    top: '80px',
+    w: '256px',
+    h: 'calc(100vh - 80px - 34px - 144px)',
+    m: '34px 4px 0 0',
+    pb: '8px',
+    bgColor: 'white',
+};
+export const navMobileBlur = {
+    display: ['block', 'block', 'none', 'none', 'none'],
+    position: 'fixed',
+    backdropFilter: 'blur(4px)',
+    bg: 'rgba(0, 0, 0, 0.16)',
+    h: 'calc(100dvh - 64px)',
+    w: '100%',
+    top: '64px',
+    zIndex: 3,
+    left: 0,
+};
+
+export const navMobileContainer = {
+    position: 'absolute',
+    zIndex: 4,
+    top: '0',
+    right: '8px',
+    w: '344px',
+    h: 'calc(100% - 84px)',
+    bgColor: 'white',
+    borderRadius: ' 0 0 12px 12px',
+    overflowY: 'scroll',
+    '&::-webkit-scrollbar': {
+        width: '8px',
+        mr: '20px',
+    },
+    '&::-webkit-scrollbar-track': {
+        background: 'blackAlpha.50',
+    },
+    '&::-webkit-scrollbar-thumb': {
+        background: 'blackAlpha.300',
+        borderRadius: '8px',
+    },
+    '&::-webkit-scrollbar-thumb:hover': {
+        background: 'blackAlpha.300',
+    },
+};

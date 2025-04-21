@@ -5,13 +5,7 @@ import { VeganKitchen } from '~/pages/VeganKitchen';
 export const navigationRoutes = [
     { path: '/', element: <MainSection />, name: 'Главная' },
     { path: '/the-juiciest', element: <TheJuiciest />, name: 'Самое сочное' },
+    { path: '/:category', element: <VeganKitchen /> }, //доработать этот момент
     { path: '/:category/:subcategory', element: <VeganKitchen /> },
+    { path: '/:category/:subcategory/:id', element: <VeganKitchen /> }, //доработать этот момент
 ];
-
-export const routeNameByPath: Record<string, string> = navigationRoutes.reduce(
-    (acc, route) => {
-        if (route.name) acc[route.path] = route.name;
-        return acc;
-    },
-    {} as Record<string, string>,
-);

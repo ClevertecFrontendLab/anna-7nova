@@ -32,7 +32,7 @@ export const NewRecipes: React.FC = () => (
             />
             <NewRecipesCard
                 rate={{ like: 1 }}
-                category={category.desert}
+                category={category.dessert}
                 src={blockNewReciepes.oladie}
                 title='Оладьи на кефире "Пышные"'
                 text='Очень вкусные и нежные оладьи на кефире. Настоятельно рекомендую пышные кефирные оладьи на завтрак.'
