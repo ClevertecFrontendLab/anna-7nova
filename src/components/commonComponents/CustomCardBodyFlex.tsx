@@ -1,10 +1,17 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 import React from 'react';
 
-import { CardBodyType } from '../layouts/sections/blocks/NewRecipesCard';
 import { boxDesktopVisible } from '../styles/Section.style';
 
-export const CustomCardBodyFlex: React.FC<CardBodyType> = ({ title, text }: CardBodyType) => (
+export type CustomCardBodyFlexType = {
+    title: string;
+    text: string;
+};
+
+export const CustomCardBodyFlex: React.FC<CustomCardBodyFlexType> = ({
+    title,
+    text,
+}: CustomCardBodyFlexType) => (
     <Box>
         <Heading as='h6' size='h6' noOfLines={{ base: 2, md: 1 }} mb='8px'>
             {title}

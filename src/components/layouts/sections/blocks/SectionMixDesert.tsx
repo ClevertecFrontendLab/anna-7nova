@@ -22,25 +22,25 @@ export const SectionMixDesert: React.FC = () => (
         </GridItem>
         <GridItem colSpan={1}>
             <CardDesignBasic
-                rate={{ save: 1, like: 1 }}
-                category={category.child}
+                rate={{ bookmarks: 1, likes: 1 }}
+                category={category['children-dish']}
                 title='Бананово-молочное желе'
                 text='Молочное желе – это просто, вкусно и полезно, ведь для его приготовления в качестве основы используется молоко.'
             />
         </GridItem>
         <GridItem colSpan={1}>
             <CardDesignBasic
-                rate={{ save: 2, like: 1 }}
-                category={category.child}
+                rate={{ bookmarks: 2, likes: 1 }}
+                category={category['children-dish']}
                 title='Нежный сливочно-сырный крем для кексов'
                 text='Сливочно-сырным кремом можно украсить кексы, либо другую выпечку, а также этим кремом можно наполнить заварные пирожные.'
             />
         </GridItem>
         <GridItem colSpan={{ base: 1, xl: 2 }} sx={gridItemMix}>
-            <CardDesignSmall category={category.child} text='Домашние сырные палочки' />
-            <CardDesignSmall category={category.traditional} text='Панкейки' />
+            <CardDesignSmall category={category['children-dish']} text='Домашние сырные палочки' />
+            <CardDesignSmall category={category['national']} text='Панкейки' />
             <CardDesignSmall
-                category={category.vegan}
+                category={category['vegan']}
                 text='Воздушное банановое печенье на сковороде'
             />
         </GridItem>

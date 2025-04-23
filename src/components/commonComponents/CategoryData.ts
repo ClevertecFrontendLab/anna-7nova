@@ -1,15 +1,15 @@
-import child from '../../assets/images/icons/aside/icon_child.svg';
-import desert from '../../assets/images/icons/aside/icon_desert.svg';
-import drink from '../../assets/images/icons/aside/icon_drink.svg';
+import children from '../../assets/images/icons/aside/icon_child.svg';
+import dessert from '../../assets/images/icons/aside/icon_desert.svg';
+import drinks from '../../assets/images/icons/aside/icon_drink.svg';
 import grill from '../../assets/images/icons/aside/icon_gril.svg';
-import health from '../../assets/images/icons/aside/icon_healthy_dish.svg';
-import mainMeal from '../../assets/images/icons/aside/icon_main_meal.svg';
-import ready from '../../assets/images/icons/aside/icon_ready.svg';
-import salad from '../../assets/images/icons/aside/icon_salad.svg';
-import secondMeal from '../../assets/images/icons/aside/icon_second_meal.svg';
+import therapeutic from '../../assets/images/icons/aside/icon_healthy_dish.svg';
+import main from '../../assets/images/icons/aside/icon_main_meal.svg';
+import provision from '../../assets/images/icons/aside/icon_ready.svg';
+import salads from '../../assets/images/icons/aside/icon_salad.svg';
+import second from '../../assets/images/icons/aside/icon_second_meal.svg';
 import snacks from '../../assets/images/icons/aside/icon_snacks.svg';
 import souse from '../../assets/images/icons/aside/icon_souse.svg';
-import traditional from '../../assets/images/icons/aside/icon_traditional_dish.svg';
+import national from '../../assets/images/icons/aside/icon_traditional_dish.svg';
 import vegan from '../../assets/images/icons/aside/icon_vegan.svg';
 
 export type SubcategoriesType = { slug: string; name: string };
@@ -27,20 +27,20 @@ export type CategoryType = {
 
 const subcategories = [
     { slug: 'snacks', name: 'Закуски' },
-    { slug: 'mainMeal', name: 'Первые блюда' },
+    { slug: 'main-dish', name: 'Первые блюда' },
     { slug: 'secondMeal', name: 'Вторые блюда' },
     { slug: 'side-dishes', name: 'Гарниры' },
     { slug: 'dessert', name: 'Десерты' },
     { slug: 'pies', name: 'Выпечка' },
     { slug: 'raw-food-dishes', name: 'Сыроедческие блюда' },
-    { slug: 'drink', name: 'Напитки' },
+    { slug: 'drinks', name: 'Напитки' },
 ];
 
 export const category: CategoryType = {
-    salad: {
+    salads: {
         category: 'Салаты',
-        src: salad,
-        slug: 'salad',
+        src: salads,
+        slug: 'salads',
         subcategories: subcategories,
     },
     snacks: {
@@ -49,22 +49,22 @@ export const category: CategoryType = {
         slug: 'snacks',
         subcategories: subcategories,
     },
-    mainMeal: {
+    'main-dish': {
         category: 'Первые блюда',
-        src: mainMeal,
-        slug: 'mainMeal',
+        src: main,
+        slug: 'main-dish',
         subcategories: subcategories,
     },
-    secondMeal: {
+    'second-dish': {
         category: 'Вторые блюда',
-        src: secondMeal,
-        slug: 'secondMeal',
+        src: second,
+        slug: 'second-dish',
         subcategories: subcategories,
     },
     dessert: {
         category: 'Десерты, выпечка',
-        src: desert,
-        slug: 'desert',
+        src: dessert,
+        slug: 'dessert',
         subcategories: subcategories,
     },
     grill: {
@@ -79,22 +79,22 @@ export const category: CategoryType = {
         slug: 'vegan',
         subcategories: subcategories,
     },
-    child: {
+    'children-dish': {
         category: 'Детские блюда',
-        src: child,
-        slug: 'child',
+        src: children,
+        slug: 'children-dish',
         subcategories: subcategories,
     },
-    health: {
+    'therapeutic-nutrition': {
         category: 'Лечебное питание',
-        src: health,
-        slug: 'health',
+        src: therapeutic,
+        slug: 'therapeutic-nutrition',
         subcategories: subcategories,
     },
-    traditional: {
+    national: {
         category: 'Национальные',
-        src: traditional,
-        slug: 'traditional',
+        src: national,
+        slug: 'national',
         subcategories: subcategories,
     },
     souse: {
@@ -103,16 +103,16 @@ export const category: CategoryType = {
         slug: 'souse',
         subcategories: subcategories,
     },
-    drink: {
+    drinks: {
         category: 'Напитки',
-        src: drink,
-        slug: 'drink',
+        src: drinks,
+        slug: 'drinks',
         subcategories: subcategories,
     },
-    ready: {
+    provision: {
         category: 'Заготовки',
-        src: ready,
-        slug: 'ready',
+        src: provision,
+        slug: 'provision',
         subcategories: subcategories,
     },
 };

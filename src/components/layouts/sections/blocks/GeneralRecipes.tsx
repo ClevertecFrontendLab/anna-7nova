@@ -1,26 +1,62 @@
-import { Grid } from '@chakra-ui/react';
+import {
+    Box,
+    Button,
+    Card,
+    CardBody,
+    CardFooter,
+    Flex,
+    Grid,
+    IconButton,
+    Image,
+    Stack,
+} from '@chakra-ui/react';
 import React from 'react';
 
-import { dataGeneralRecipesType } from '~/components/commonComponents/DataRecipes';
-import { gridContainer } from '~/components/styles/Section.style';
+import { IconSave } from '~/components/commonComponents/button/IconSave';
+import { CategoryStickerRecipe } from '~/components/commonComponents/CategoryStickerRecipe';
+import { Rate } from '~/components/commonComponents/Rate';
+import {
+    boxDesktopVisible,
+    boxMobileVisibleAbsolute,
+    flexRowBetweenStartWrap,
+    flexRowEndGap,
+    generalCard,
+    generalCardImage,
+    generalCardStack,
+    gridContainer,
+} from '~/components/styles/Section.style';
 
-import { GeneralRecipeCard } from './GeneralRecipeCard';
+import { CustomCardBodyFlex } from '../../../commonComponents/CustomCardBodyFlex';
+import { DataType } from './NewRecipes';
 
-type GeneralRecipesPropsType = { data: Array<dataGeneralRecipesType> };
-
-export const GeneralRecipes: React.FC<GeneralRecipesPropsType> = ({
-    data,
-}: GeneralRecipesPropsType) => (
+export const GeneralRecipes: React.FC<DataType> = ({ data }: DataType) => (
     <Grid sx={gridContainer}>
-        {data.map((el, i) => (
-            <GeneralRecipeCard
-                key={i}
-                rate={el.rate}
-                title={el.title}
-                text={el.text}
-                src={el.src}
-                category={el.sticker}
-            />
+        {data.map((el) => (
+            <Card sx={generalCard} direction='row' key={el.id}>
+                <Image src={el.image} sx={generalCardImage} />
+                <Stack sx={generalCardStack}>
+                    <Flex sx={flexRowBetweenStartWrap}>
+                        <Box sx={boxDesktopVisible}>
+                            <CategoryStickerRecipe currentCategory={[el.category[0]]} />
+                        </Box>
+                        <Rate rate={{ likes: el.likes, bookmarks: el.bookmarks }} />
+                    </Flex>
+                    <CardBody p='0'>
+                        <CustomCardBodyFlex title={el.title} text={el.description} />
+                    </CardBody>
+                    <CardFooter sx={flexRowEndGap}>
+                        <IconButton
+                            variant='buttonOutlineSmall'
+                            icon={<IconSave />}
+                            aria-label='Save Button'
+                        />
+                        <Button variant='buttonSolidSmall'>Готовить</Button>
+                    </CardFooter>
+                </Stack>
+                <Box sx={boxMobileVisibleAbsolute}>
+                    <CategoryStickerRecipe currentCategory={el.category} />
+                </Box>
+            </Card>
         ))}
     </Grid>
 );

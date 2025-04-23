@@ -4,7 +4,7 @@ export const flexHeader = {
     h: { base: '64px', md: '80px' },
     bgColor: 'brand.50',
     alignItems: 'center',
-    zIndex: '1',
+    zIndex: '5',
 };
 export const flexBetweenCenterGrowDesktopVisible = {
     display: ['none', 'none', 'flex', 'flex', 'flex'],

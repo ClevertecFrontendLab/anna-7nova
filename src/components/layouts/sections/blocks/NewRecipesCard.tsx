@@ -1,13 +1,12 @@
 import { Box, Card, Flex, Image, Stack } from '@chakra-ui/react';
 import React from 'react';
 
-import { PodCategoryType } from '~/components/commonComponents/CategoryData';
-import { CategorySticker } from '~/components/commonComponents/CategorySticker';
-import { Rate, RateElementType } from '~/components/commonComponents/Rate';
+import { CategoryStickerRecipe } from '~/components/commonComponents/CategoryStickerRecipe';
+import { Rate } from '~/components/commonComponents/Rate';
 import {
     boxDesktopVisible,
     boxMobileVisibleAbsolute,
-    flexRowBetweenStart,
+    flexRowBetweenEnd,
     newRecipesCard,
     newRecipesCardImage,
     newRecipesCardStack,
@@ -15,42 +14,88 @@ import {
 
 import { CustomCardBodyFlex } from '../../../commonComponents/CustomCardBodyFlex';
 
-export type CardBodyType = {
-    title?: string;
-    text: string;
+export type CategoryMockType =
+    | 'vegan'
+    | 'second-dish'
+    | 'snacks'
+    | 'national'
+    | 'salads'
+    | 'main-dish'
+    | 'dessert'
+    | 'grill'
+    | 'children-dish'
+    | 'therapeutic-nutrition'
+    | 'souse'
+    | 'drinks'
+    | 'provision';
+export type SubcategoryMockType =
+    | 'snacks'
+    | 'vegetables'
+    | 'warm-snacks'
+    | 'second-dish'
+    | 'italian'
+    | 'poultry-dish'
+    | 'side-dishes'
+    | 'warm-salads'
+    | 'meat-soups'
+    | 'main-dish'
+    | 'dessert'
+    | 'pies'
+    | 'raw-food-dishes'
+    | 'drinks';
+type IngredientsType = {
+    title: string;
+    count: string;
+    measureUnit: 'шт.' | 'г' | 'мл' | 'по вкусу' | 'листов' | 'зубчиков' | 'ч. л.';
+};
+type StepsType = {
+    stepNumber: number;
+    description: string;
+    image: 'url';
+};
+export type MockDataSliderType = {
+    id: string;
+    title: string;
+    description: string;
+    category: Array<CategoryMockType>;
+    subcategory: Array<SubcategoryMockType>;
+    image: string;
+    bookmarks: number;
+    likes: number;
+    date: string;
+    time: string;
+    portions: number;
+    nutritionValue: {
+        calories: number;
+        proteins: number;
+        fats: number;
+        carbohydrates: number;
+    };
+    ingredients: Array<IngredientsType>;
+    steps: Array<StepsType>;
+    meat?: string;
+    side?: string;
+};
+export type NewRecipesCardPropsType = {
+    el: MockDataSliderType;
 };
 
-export type NewRecipesCardPropsType = {
-    src: string;
-    category: PodCategoryType;
-    rate: RateElementType;
-} & CardBodyType;
-
 export const NewRecipesCard: React.FC<NewRecipesCardPropsType> = ({
-    src,
-    title,
-    text,
-    category,
-    rate,
+    el,
 }: NewRecipesCardPropsType) => (
     <Card sx={newRecipesCard}>
-        <Image src={src} sx={newRecipesCardImage} />
+        <Image src={el.image} sx={newRecipesCardImage} />
         <Stack sx={newRecipesCardStack}>
-            <CustomCardBodyFlex title={title} text={text} />
-            <Flex sx={flexRowBetweenStart}>
+            <CustomCardBodyFlex title={el.title} text={el.description} />
+            <Flex sx={flexRowBetweenEnd}>
                 <Box sx={boxDesktopVisible}>
-                    <CategorySticker
-                        bgColor='brand.150'
-                        category={category}
-                        width='16px'
-                        height='16px'
-                    />
+                    <CategoryStickerRecipe currentCategory={el.category} />
                 </Box>
-                <Rate rate={rate} />
+                <Rate rate={{ likes: el.likes, bookmarks: el.bookmarks }} />
             </Flex>
         </Stack>
         <Box sx={boxMobileVisibleAbsolute}>
-            <CategorySticker bgColor='brand.150' category={category} width='16px' height='16px' />
+            <CategoryStickerRecipe currentCategory={el.category} />
         </Box>
     </Card>
 );

@@ -2,13 +2,13 @@ import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
-import { dataGeneralRecipes } from '~/components/commonComponents/DataRecipes';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
+import { MockDataSliderType } from '~/components/layouts/sections/blocks/NewRecipesCard';
+import { TheJuiciestBlock } from '~/components/layouts/sections/blocks/TheJuiciestBlock';
 
 import { BlogCooking } from '../components/commonComponents/BlogCooking';
 import { ButtonMore } from '../components/commonComponents/ButtonMore';
 import { TitleSection } from '../components/commonComponents/TitleSection';
-import { GeneralRecipes } from '../components/layouts/sections/blocks/GeneralRecipes';
 import { NewRecipes } from '../components/layouts/sections/blocks/NewRecipes';
 import { SectionMix } from '../components/layouts/sections/blocks/SectionMix';
 import { SearchSection } from '../components/layouts/sections/SearchSection';
@@ -19,18 +19,20 @@ import {
     boxTitleAndSearchPrimary,
     flexRowBetweenStart,
 } from '../components/styles/Section.style';
+import mock from '../mocks/mock.json';
 
 export const MainSection: React.FC = () => {
     const navigate = useNavigate();
+    const mockData = mock as Array<MockDataSliderType>;
     return (
         <>
             <Box sx={boxTitleAndSearchPrimary}>
                 <TitleSectionMain />
                 <SearchSection />
             </Box>
-            <Box w='100%'>
+            <Box w='100%' h='100%' maxH='100%'>
                 <TitleSection title='Новые рецепты ' />
-                <NewRecipes />
+                <NewRecipes data={mockData} />
             </Box>
             <Box w='100%'>
                 <Flex sx={flexRowBetweenStart}>
@@ -39,7 +41,7 @@ export const MainSection: React.FC = () => {
                         <ButtonMore text='Вся подборка' onClick={() => navigate('/the-juiciest')} />
                     </Box>
                 </Flex>
-                <GeneralRecipes data={dataGeneralRecipes} />
+                <TheJuiciestBlock data={mockData} />
                 <Box data-test-id='juiciest-link-mobile' sx={boxMobileVisibleCenter}>
                     <ButtonMore text='Вся подборка' onClick={() => navigate('/the-juiciest')} />
                 </Box>

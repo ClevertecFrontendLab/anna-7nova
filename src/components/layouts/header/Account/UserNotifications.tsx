@@ -15,6 +15,6 @@ export const UserNotifications: React.FC<RateStylePropsType> = ({
     variant,
 }: RateStylePropsType) => (
     <>
-        <Rate style={style} rate={{ save: 185, like: 587, people: 589 }} variant={variant} />
+        <Rate style={style} rate={{ bookmarks: 185, likes: 587, people: 589 }} variant={variant} />
     </>
 );

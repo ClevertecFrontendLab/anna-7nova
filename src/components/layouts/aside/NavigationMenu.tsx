@@ -16,43 +16,43 @@ export const NavigationMenu: React.FC<NavigationMenuType> = ({ onClick }: Naviga
                 <CustomAccordionItem key={cat.slug} category={cat} onClick={onClick} />
             ))} */}
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.salad} onClick={onClick} />
+            <CustomAccordionItem category={category['salads']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.snacks} onClick={onClick} />
+            <CustomAccordionItem category={category['snacks']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.mainMeal} onClick={onClick} />
+            <CustomAccordionItem category={category['main-dish']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.secondMeal} onClick={onClick} />
+            <CustomAccordionItem category={category['second-dish']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.dessert} onClick={onClick} />
+            <CustomAccordionItem category={category['dessert']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.grill} onClick={onClick} />
+            <CustomAccordionItem category={category['grill']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle} data-test-id='vegan-cuisine'>
-            <CustomAccordionItem category={category.vegan} onClick={onClick} />
+            <CustomAccordionItem category={category['vegan']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.child} onClick={onClick} />
+            <CustomAccordionItem category={category['children-dish']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.health} onClick={onClick} />
+            <CustomAccordionItem category={category['therapeutic-nutrition']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.traditional} onClick={onClick} />
+            <CustomAccordionItem category={category['national']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.souse} onClick={onClick} />
+            <CustomAccordionItem category={category['souse']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.drink} onClick={onClick} />
+            <CustomAccordionItem category={category['drinks']} onClick={onClick} />
         </AccordionItem>
         <AccordionItem sx={accordionItemStyle}>
-            <CustomAccordionItem category={category.ready} onClick={onClick} />
+            <CustomAccordionItem category={category['provision']} onClick={onClick} />
         </AccordionItem>
     </Accordion>
 );

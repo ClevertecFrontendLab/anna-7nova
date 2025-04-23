@@ -4,9 +4,9 @@ import { useLocation, useNavigate } from 'react-router';
 
 import { ButtonLoadMore } from '~/components/commonComponents/ButtonLoadMore';
 import { category } from '~/components/commonComponents/CategoryData';
-import { dataVeganRecipes } from '~/components/commonComponents/DataRecipes';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
 import { GeneralRecipes } from '~/components/layouts/sections/blocks/GeneralRecipes';
+import { MockDataSliderType } from '~/components/layouts/sections/blocks/NewRecipesCard';
 import { SectionMixDesert } from '~/components/layouts/sections/blocks/SectionMixDesert';
 import { SearchSection } from '~/components/layouts/sections/SearchSection';
 
@@ -15,6 +15,7 @@ import {
     flexRowCenter,
     tabListOverflowHidden,
 } from '../components/styles/Section.style';
+import mock from '../mocks/mock.json';
 
 export const VeganKitchen: React.FC = () => {
     const navigate = useNavigate();
@@ -25,7 +26,9 @@ export const VeganKitchen: React.FC = () => {
     // 1. Обновляем индекс таба при изменении URL
     useEffect(() => {
         if (pathnames[1]) {
-            const index = category.vegan.subcategories.findIndex((el) => el.slug === pathnames[1]);
+            const index = category['vegan'].subcategories.findIndex(
+                (el) => el.slug === pathnames[1],
+            );
             setTabIndex(index !== -1 ? index : 0);
         }
     }, [pathnames]);
@@ -33,11 +36,14 @@ export const VeganKitchen: React.FC = () => {
     // 2. При клике на таб — меняем URL
     const onChangeTabHandler = (index: number) => {
         setTabIndex(index);
-        const sub = category.vegan.subcategories[index];
+        const sub = category['vegan'].subcategories[index];
         if (sub) {
             navigate(`/vegan/${sub.slug}`);
         }
     };
+    //data
+    const mockData = mock as Array<MockDataSliderType>;
+    const sortedMockData = mockData.filter((el) => el.category.includes('vegan'));
     return (
         <>
             <Box sx={boxTitleAndSearchSecondary}>
@@ -47,49 +53,83 @@ export const VeganKitchen: React.FC = () => {
             <Box w='100%'>
                 <Tabs index={tabIndex} onChange={onChangeTabHandler} variant='line' isLazy>
                     <TabList sx={tabListOverflowHidden}>
-                        {category.vegan.subcategories.map((el, i) => (
+                        {category['vegan'].subcategories.map((el, i) => (
                             <Tab key={i}>{el.name}</Tab>
                         ))}
                     </TabList>
                     <TabPanels maxW='100%' w='100%'>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.some(
+                                            (sub) => sub === 'snacks' || sub === 'warm-snacks',
+                                        ),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.includes('main-dish'),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.includes('second-dish'),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.includes('side-dishes'),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.includes('dessert'),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.includes('pies'),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.includes('raw-food-dishes'),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                         <TabPanel p={0}>
                             <Box>
-                                <GeneralRecipes data={dataVeganRecipes} />
+                                <GeneralRecipes
+                                    data={sortedMockData.filter((el) =>
+                                        el.subcategory.includes('drinks'),
+                                    )}
+                                />
                             </Box>
                         </TabPanel>
                     </TabPanels>

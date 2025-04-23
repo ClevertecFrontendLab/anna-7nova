@@ -4,8 +4,8 @@ import React from 'react';
 import { CustomIconButton } from './CustomIconButton';
 
 export type RateElementType = {
-    like?: number;
-    save?: number;
+    likes?: number;
+    bookmarks?: number;
     people?: number;
 };
 
@@ -17,11 +17,11 @@ export type RatePropsType = {
 
 export const Rate: React.FC<RatePropsType> = ({ rate, style, variant }: RatePropsType) => {
     const saveValue =
-        rate?.save !== undefined && rate?.save > 0 ? (
+        rate?.bookmarks !== undefined && rate?.bookmarks > 0 ? (
             <CustomIconButton
                 ariaLabel='button icon save'
                 iconId='save'
-                number={rate.save}
+                number={rate.bookmarks}
                 variant={variant}
             />
         ) : null;
@@ -35,11 +35,11 @@ export const Rate: React.FC<RatePropsType> = ({ rate, style, variant }: RateProp
             />
         ) : null;
     const likesValue =
-        rate?.like !== undefined && rate?.like > 0 ? (
+        rate?.likes !== undefined && rate?.likes > 0 ? (
             <CustomIconButton
                 ariaLabel='button icon like'
                 iconId='like'
-                number={rate.like}
+                number={rate.likes}
                 variant={variant}
             />
         ) : null;
