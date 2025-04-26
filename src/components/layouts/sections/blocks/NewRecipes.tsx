@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperClass } from 'swiper/types';
 
+import { MockDataSliderType } from '~/components/commonComponents/CategoryData';
 import {
     buttonSlider,
     buttonSliderIcon,
@@ -13,7 +14,7 @@ import {
     newRecipesContainer,
 } from '~/components/styles/Section.style';
 
-import { MockDataSliderType, NewRecipesCard } from './NewRecipesCard';
+import { NewRecipesCard } from './NewRecipesCard';
 
 export type DataType = { data: Array<MockDataSliderType> };
 

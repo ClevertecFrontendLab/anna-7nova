@@ -3,10 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 
 import { ButtonLoadMore } from '~/components/commonComponents/ButtonLoadMore';
-import { category } from '~/components/commonComponents/CategoryData';
+import { category, MockDataSliderType } from '~/components/commonComponents/CategoryData';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
 import { GeneralRecipes } from '~/components/layouts/sections/blocks/GeneralRecipes';
-import { MockDataSliderType } from '~/components/layouts/sections/blocks/NewRecipesCard';
 import { SectionMixDesert } from '~/components/layouts/sections/blocks/SectionMixDesert';
 import { SearchSection } from '~/components/layouts/sections/SearchSection';
 

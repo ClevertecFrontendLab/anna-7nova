@@ -7,18 +7,20 @@ import { CategorySticker } from './CategorySticker';
 
 type CategoryStickerRecipeType = {
     currentCategory: Array<CategoryMockType>;
+    bgColor?: string;
 };
 
 export const CategoryStickerRecipe: React.FC<CategoryStickerRecipeType> = ({
     currentCategory,
+    bgColor,
 }: CategoryStickerRecipeType) => (
-    <Flex flexDir='column' gap='5px'>
+    <Flex flexWrap='wrap' gap='5px'>
         {currentCategory.map((catKey) => {
             const currentCat = category[catKey];
             return (
                 <CategorySticker
                     key={catKey}
-                    bgColor='brand.150'
+                    bgColor={bgColor}
                     category={currentCat}
                     width='16px'
                     height='16px'

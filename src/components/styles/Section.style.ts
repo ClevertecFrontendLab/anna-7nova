@@ -135,9 +135,22 @@ export const flexRowBetweenCenterWrap = {
     alignItems: 'center',
     wrap: 'wrap',
 };
+export const flexRowBetweenEndWrap = {
+    justifyContent: 'space-between',
+    alignItems: 'end',
+    flexWrap: 'wrap',
+    gap: '12px',
+};
 export const flexRowBetweenStartWrap = {
     justifyContent: 'space-between',
     alignItems: 'start',
+    wrap: 'wrap',
+};
+export const flexColBetweenStartWrap = {
+    h: '100%',
+    flexDir: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
     wrap: 'wrap',
 };
 export const sticker = {
@@ -188,7 +201,7 @@ export const gridContainer = {
 export const generalCard = {
     position: 'relative',
     variant: 'outline',
-    height: ['128px', '128px', '244px', '244px'],
+    height: { base: '128px', md: '244px' },
     width: '100%',
 };
 export const generalCardImage = {
@@ -203,6 +216,32 @@ export const generalCardStack = {
     p: { base: '8px', md: '20px 24px' },
     w: '100%',
     gap: { base: '6px', md: '24px' },
+};
+//GeneralRecipeCardFull
+export const generalCardFull = {
+    height: '100%',
+    width: '100%',
+    gap: { base: '16px', lg: '24px' },
+    flexDir: { base: 'column', sm: 'row' },
+};
+
+export const generalCardImageFull = {
+    objectFit: 'cover',
+    borderRadius: '8px',
+    alt: 'The Dish',
+    minW: { base: '100%', sm: '232px', lg: '353px', xl: '553px' },
+    maxW: { base: '100%', sm: '232px', lg: '353px', xl: '553px' },
+    w: { base: '100%', sm: '232px', lg: '353px', xl: '553px' },
+    minH: { base: '224px', lg: '410px' },
+    flex: 1,
+};
+
+export const generalCardStackFull = {
+    w: '100%',
+    minH: { base: '224px', lg: '410px' },
+    flexDir: 'column',
+    gap: { base: '32px', xl: '40px' },
+    flex: 1,
 };
 
 //NewRecipes
@@ -379,4 +418,26 @@ export const navMobileContainer = {
     '&::-webkit-scrollbar-thumb:hover': {
         background: 'blackAlpha.300',
     },
+};
+//CaloricContent
+export const containerRecipeFull = {
+    w: { base: '100%', lg: '578px', xl: '668px' },
+    m: '0 auto',
+};
+
+export const smallCard = {
+    border: '1px solid rgba(0, 0, 0, 0.08)',
+    borderRadius: '16px',
+    p: '16px',
+    width: '100%',
+    height: { base: '100%', sm: '136px' },
+    display: 'flex',
+    flexDir: { base: 'row', sm: 'column' },
+    justifyContent: 'space-between',
+    alignItems: 'center',
+};
+export const recipeCardStack = {
+    p: { base: '8px', md: '20px 24px' },
+    w: '100%',
+    gap: { base: '12px', md: '16px' },
 };

@@ -6,6 +6,8 @@ import { NavLink, useLocation } from 'react-router';
 import { navigationRoutes } from '~/app/router/routes';
 import { category } from '~/components/commonComponents/CategoryData';
 
+import mock from '../../../mocks/mock.json';
+
 const categoryNameBySlug: Record<string, string> = Object.values(category).reduce(
     (acc, item) => {
         acc[item.slug] = item.category;
@@ -20,6 +22,14 @@ const categoryNameBySlug: Record<string, string> = Object.values(category).reduc
 const routeNameByPath: Record<string, string> = navigationRoutes.reduce(
     (acc, route) => {
         if (route.name) acc[route.path] = route.name;
+        return acc;
+    },
+    {} as Record<string, string>,
+);
+
+const recipeTitleById: Record<string, string> = mock.reduce(
+    (acc, recipe) => {
+        acc[recipe.id] = recipe.title;
         return acc;
     },
     {} as Record<string, string>,
@@ -57,7 +67,11 @@ export const NavMenu: React.FC = () => {
                 const categoryLabel = categoryNameBySlug[slug]; //этот момент пересмотреть
                 const routeLabel = routeNameByPath[routeTo]; //этот момент пересмотреть, сатегория - ссылка на закуски
 
-                const label = categoryLabel || routeLabel || decodeURIComponent(slug);
+                const label =
+                    categoryLabel ||
+                    routeLabel ||
+                    recipeTitleById[slug] ||
+                    decodeURIComponent(slug);
 
                 return (
                     <BreadcrumbItem key={routeTo} isCurrentPage={isLast} whiteSpace='nowrap'>

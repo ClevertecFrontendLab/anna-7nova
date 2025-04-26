@@ -116,3 +116,67 @@ export const category: CategoryType = {
         subcategories: subcategories,
     },
 };
+
+export type CategoryMockType =
+    | 'vegan'
+    | 'second-dish'
+    | 'snacks'
+    | 'national'
+    | 'salads'
+    | 'main-dish'
+    | 'dessert'
+    | 'grill'
+    | 'children-dish'
+    | 'therapeutic-nutrition'
+    | 'souse'
+    | 'drinks'
+    | 'provision';
+export type SubcategoryMockType =
+    | 'snacks'
+    | 'vegetables'
+    | 'warm-snacks'
+    | 'second-dish'
+    | 'italian'
+    | 'poultry-dish'
+    | 'side-dishes'
+    | 'warm-salads'
+    | 'meat-soups'
+    | 'main-dish'
+    | 'dessert'
+    | 'pies'
+    | 'raw-food-dishes'
+    | 'drinks';
+type IngredientsType = {
+    title: string;
+    count: string;
+    measureUnit: 'шт.' | 'г' | 'мл' | 'по вкусу' | 'листов' | 'зубчиков' | 'ч. л.';
+};
+export type StepsType = {
+    stepNumber: number;
+    description: string;
+    image: 'url';
+};
+export type NutritionValueType = {
+    calories: number;
+    proteins: number;
+    fats: number;
+    carbohydrates: number;
+};
+export type MockDataSliderType = {
+    id: string;
+    title: string;
+    description: string;
+    category: Array<CategoryMockType>;
+    subcategory: Array<SubcategoryMockType>;
+    image: string;
+    bookmarks: number;
+    likes: number;
+    date: string;
+    time: string;
+    portions: number;
+    nutritionValue: NutritionValueType;
+    ingredients: Array<IngredientsType>;
+    steps: Array<StepsType>;
+    meat?: string;
+    side?: string;
+};

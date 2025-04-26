@@ -1,4 +1,5 @@
 import { MainSection } from '~/pages/MainSection';
+import { RecipeFullCard } from '~/pages/RecipeFullCard';
 import { TheJuiciest } from '~/pages/TheJuiciest';
 import { VeganKitchen } from '~/pages/VeganKitchen';
 
@@ -7,5 +8,5 @@ export const navigationRoutes = [
     { path: '/the-juiciest', element: <TheJuiciest />, name: 'Самое сочное' },
     { path: '/:category', element: <VeganKitchen /> }, //доработать этот момент
     { path: '/:category/:subcategory', element: <VeganKitchen /> },
-    { path: '/:category/:subcategory/:id', element: <VeganKitchen /> }, //доработать этот момент
+    { path: '/:category/:subcategory/:id', element: <RecipeFullCard /> }, //доработать этот момент
 ];

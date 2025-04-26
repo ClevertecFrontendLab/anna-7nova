@@ -68,6 +68,11 @@ export const theme = extendTheme({
         },
         Heading: {
             sizes: {
+                h1: {
+                    fontSize: { base: '24px', md: '32px', lg: '48px' },
+                    fontWeight: 700,
+                    lineHeight: { base: '133%', lg: '100%' },
+                },
                 h2: {
                     fontSize: { base: '24px', md: '32px', lg: '48px', xl: '48px' },
                     fontWeight: 700,
@@ -96,6 +101,12 @@ export const theme = extendTheme({
                     fontWeight: 500,
                     lineHeight: '140%',
                 },
+                h7: {
+                    fontSize: { base: '24px', lg: '48px' },
+                    fontWeight: 500,
+                    lineHeight: '100%',
+                    pb: '20px',
+                },
             },
         },
         Text: {
@@ -103,11 +114,11 @@ export const theme = extendTheme({
                 fontSize: '14px',
                 fontWeight: 400,
                 lineHeight: '143%',
+                color: 'blackAlpha.800',
             },
             variants: {
                 categorySticker: {
-                    h: '24px',
-                    pl: { base: '2px', lg: '8px' },
+                    pl: '8px',
                     whiteSpace: 'nowrap',
                     flexShrink: 1,
                     overflow: 'hidden',
@@ -152,11 +163,22 @@ export const theme = extendTheme({
                     fontWeight: 600,
                     lineHeight: '150%',
                 },
+                buttonTextUnCollapsed: {
+                    fontSize: { base: '12px', lg: '14px', xl: '18px' },
+                    fontWeight: 600,
+                    lineHeight: '156%',
+                },
+                buttonTextUnCollapsedBlack: {
+                    fontSize: { base: '12px', lg: '14px', xl: '18px' },
+                    fontWeight: 600,
+                    lineHeight: '156%',
+                    color: 'white',
+                },
                 textSubTitle: {
                     fontSize: { base: '14px', lg: '16px' },
                     fontWeight: 500,
                     lineHeight: '150%',
-                    color: 'rgba(0, 0, 0, 0.48)',
+                    color: 'blackAlpha.600',
                     p: { base: '15px 0 15px', sm: '0 0 15px ', lg: '0 0 25px', xl: '0 0 25px' },
                 },
                 bigText: {
@@ -171,10 +193,47 @@ export const theme = extendTheme({
                     fontWeight: 500,
                     lineHeight: '150%',
                 },
+                userNameBig: {
+                    fontSize: { base: '18px', sm: '24px' },
+                    fontWeight: 700,
+                    lineHeight: '133%',
+                },
                 buttonText: {
                     fontSize: { base: '16px', xl: '18px' },
                     fontWeight: 600,
                     lineHeight: '150%',
+                },
+                //calories
+                textGrey: {
+                    fontSize: '14px',
+                    fontWeight: 400,
+                    lineHeight: '143%',
+                    color: 'blackAlpha.600',
+                    flexGrow: 1,
+                },
+                textGreenNumber: {
+                    fontSize: { base: '24px', sm: '36px' },
+                    fontWeight: 500,
+                    lineHeight: '111%',
+                    color: 'brand.800',
+                    w: '118px',
+                    textAlign: 'center',
+                },
+                textBold: {
+                    fontSize: { base: '12px', sm: '14px' },
+                    fontWeight: 600,
+                    lineHeight: '143%',
+                    color: 'blackAlpha.900',
+                    w: '61px',
+                    textAlign: 'center',
+                },
+                textGreen: {
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    lineHeight: '133%',
+                    color: 'brand.600',
+                    letterSpacing: -0.05,
+                    mr: '16px',
                 },
             },
         },
@@ -219,6 +278,17 @@ export const theme = extendTheme({
                     color: 'brand.600',
                     borderColor: 'brand.600',
                     flexShrink: 0,
+                },
+                buttonOutlineBig: {
+                    _hover: { bg: 'brand.150', border: 'none' },
+                    borderWidth: '1px',
+                    borderColor: 'blackAlpha.500',
+                    h: { base: '24px', lg: '32px', xl: '48px' },
+                },
+                buttonSolidBig: {
+                    _hover: { bg: 'brand.600', border: 'none' },
+                    bg: 'brand.400',
+                    h: { base: '24px', lg: '32px', xl: '48px' },
                 },
             },
         },

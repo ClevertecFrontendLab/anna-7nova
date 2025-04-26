@@ -25,7 +25,7 @@ export const CardDesignBasic: React.FC<CardDesignBasicPropsType> = ({
         <CustomCardBodyFull title={title} text={text} />
         <Flex sx={sticker}>
             <CategorySticker category={category} width='16px' height='16px' />
-            <Rate rate={rate} />
+            <Rate rate={rate} width='12px' height='12px' />
         </Flex>
     </Card>
 );

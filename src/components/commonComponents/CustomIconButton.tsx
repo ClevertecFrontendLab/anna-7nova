@@ -8,6 +8,9 @@ type IconButtonPropsType = {
     iconId: string;
     number: number;
     variant?: 'buttonTextNotification';
+    width?: string;
+    height?: string;
+    viewBox?: string;
 };
 
 export const CustomIconButton: React.FC<IconButtonPropsType> = ({
@@ -15,6 +18,9 @@ export const CustomIconButton: React.FC<IconButtonPropsType> = ({
     iconId,
     number,
     variant,
+    width,
+    height,
+    viewBox,
 }: IconButtonPropsType) => (
     <IconButton
         variant='ghost'
@@ -23,7 +29,7 @@ export const CustomIconButton: React.FC<IconButtonPropsType> = ({
         p={{ base: '2px', lg: '6px 8px' }}
         icon={
             <Flex alignItems='center'>
-                <IconSvg iconId={iconId} width='12' height='12' />
+                <IconSvg iconId={iconId} width={width} height={height} viewBox={viewBox} />
                 <Text variant={variant || 'textSticker'} color='brand.600' ml='6px'>
                     {number}
                 </Text>

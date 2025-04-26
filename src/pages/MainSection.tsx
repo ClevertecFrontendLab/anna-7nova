@@ -2,8 +2,8 @@ import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
+import { MockDataSliderType } from '~/components/commonComponents/CategoryData';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
-import { MockDataSliderType } from '~/components/layouts/sections/blocks/NewRecipesCard';
 import { TheJuiciestBlock } from '~/components/layouts/sections/blocks/TheJuiciestBlock';
 
 import { BlogCooking } from '../components/commonComponents/BlogCooking';

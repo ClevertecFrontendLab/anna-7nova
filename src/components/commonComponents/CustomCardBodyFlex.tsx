@@ -4,7 +4,7 @@ import React from 'react';
 import { boxDesktopVisible } from '../styles/Section.style';
 
 export type CustomCardBodyFlexType = {
-    title: string;
+    title?: string;
     text: string;
 };
 

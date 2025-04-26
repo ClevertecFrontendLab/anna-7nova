@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { MockDataSliderType } from '~/components/commonComponents/CategoryData';
+
 import { GeneralRecipes } from './GeneralRecipes';
 import { DataType } from './NewRecipes';
-import { MockDataSliderType } from './NewRecipesCard';
 
 export const TheJuiciestBlock: React.FC<DataType> = ({ data }: DataType) => {
     const sortedByBookmarksAndLikes = data
