@@ -2,6 +2,7 @@ import { Box, Flex, Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/r
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 
+import { AppRoutesPropsType } from '~/app/router/AppRoutes';
 import { ButtonLoadMore } from '~/components/commonComponents/ButtonLoadMore';
 import { category, MockDataSliderType } from '~/components/commonComponents/CategoryData';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
@@ -16,7 +17,13 @@ import {
 } from '../components/styles/Section.style';
 import mock from '../mocks/mock.json';
 
-export const VeganKitchen: React.FC = () => {
+export const VeganKitchen: React.FC<AppRoutesPropsType> = ({
+    onFilterBtnClick,
+    filterCheckboxHandle,
+    filter,
+    allergens,
+    addItemsAllergens,
+}: AppRoutesPropsType) => {
     const navigate = useNavigate();
     const location = useLocation();
     const pathnames = location.pathname.split('/').filter((x) => x);
@@ -47,7 +54,13 @@ export const VeganKitchen: React.FC = () => {
         <>
             <Box sx={boxTitleAndSearchSecondary}>
                 <TitleSectionMain subtitle='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.' />
-                <SearchSection />
+                <SearchSection
+                    onFilterBtnClick={onFilterBtnClick}
+                    filterCheckboxHandle={filterCheckboxHandle}
+                    filter={filter}
+                    allergens={allergens}
+                    addItemsAllergens={addItemsAllergens}
+                />
             </Box>
             <Box w='100%'>
                 <Tabs index={tabIndex} onChange={onChangeTabHandler} variant='line' isLazy>

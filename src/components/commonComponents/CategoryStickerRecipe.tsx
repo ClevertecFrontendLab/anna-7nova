@@ -1,8 +1,7 @@
 import { Flex } from '@chakra-ui/react';
 import React from 'react';
 
-import { CategoryMockType } from '../layouts/sections/blocks/NewRecipesCard';
-import { category } from './CategoryData';
+import { category, CategoryMockType } from './CategoryData';
 import { CategorySticker } from './CategorySticker';
 
 type CategoryStickerRecipeType = {

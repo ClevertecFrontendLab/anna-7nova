@@ -3,7 +3,6 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink, useLocation } from 'react-router';
 
-import { navigationRoutes } from '~/app/router/routes';
 import { category } from '~/components/commonComponents/CategoryData';
 
 import mock from '../../../mocks/mock.json';
@@ -14,14 +13,6 @@ const categoryNameBySlug: Record<string, string> = Object.values(category).reduc
         item.subcategories?.forEach((sub) => {
             acc[sub.slug] = sub.name;
         });
-        return acc;
-    },
-    {} as Record<string, string>,
-);
-
-const routeNameByPath: Record<string, string> = navigationRoutes.reduce(
-    (acc, route) => {
-        if (route.name) acc[route.path] = route.name;
         return acc;
     },
     {} as Record<string, string>,
@@ -59,22 +50,13 @@ export const NavMenu: React.FC = () => {
                     Главная
                 </BreadcrumbLink>
             </BreadcrumbItem>
-
-            {pathnames.map((slug, index) => {
-                const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+            {pathnames.map((el, index) => {
                 const isLast = index === pathnames.length - 1;
-
-                const categoryLabel = categoryNameBySlug[slug]; //этот момент пересмотреть
-                const routeLabel = routeNameByPath[routeTo]; //этот момент пересмотреть, сатегория - ссылка на закуски
-
-                const label =
-                    categoryLabel ||
-                    routeLabel ||
-                    recipeTitleById[slug] ||
-                    decodeURIComponent(slug);
-
+                const routeTo = `/${pathnames.slice().join('/')}`;
+                const categoryLabel = categoryNameBySlug[el];
+                const label = categoryLabel || recipeTitleById[el] || decodeURIComponent(el);
                 return (
-                    <BreadcrumbItem key={routeTo} isCurrentPage={isLast} whiteSpace='nowrap'>
+                    <BreadcrumbItem key={index} isCurrentPage={isLast} whiteSpace='nowrap'>
                         <BreadcrumbLink
                             as={NavLink}
                             to={routeTo}

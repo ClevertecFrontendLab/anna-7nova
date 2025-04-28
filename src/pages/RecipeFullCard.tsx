@@ -8,7 +8,7 @@ import { NewRecipes } from '~/components/layouts/sections/blocks/NewRecipes';
 import { CaloricContent } from '~/components/layouts/sections/recipe/CaloricContent';
 import { GeneralRecipeCardFull } from '~/components/layouts/sections/recipe/GeneralRecipeCardFull';
 import { Ingredients } from '~/components/layouts/sections/recipe/Ingredients';
-import { Preparation } from '~/components/layouts/sections/recipe/preparation';
+import { Preparation } from '~/components/layouts/sections/recipe/Preparation';
 import { Subscribe } from '~/components/layouts/sections/recipe/Subscribe';
 
 import mock from '../mocks/mock.json';

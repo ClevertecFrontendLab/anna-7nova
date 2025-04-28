@@ -33,6 +33,16 @@ export const theme = extendTheme({
         heading: `'Inter', sans-serif`,
         body: `'Inter', sans-serif`,
     },
+    styles: {
+        global: {
+            'button:focus': {
+                outline: 'none',
+            },
+            'button:focus-visible': {
+                outline: 'none',
+            },
+        },
+    },
     components: {
         Tabs: {
             baseStyle: {
@@ -235,6 +245,16 @@ export const theme = extendTheme({
                     letterSpacing: -0.05,
                     mr: '16px',
                 },
+                textFilterSticker: {
+                    fontSize: '12px',
+                    fontWeight: 500,
+                    lineHeight: '133%',
+                    color: 'brand.600',
+                    border: '1px solid',
+                    borderColor: 'brand.400',
+                    borderRadius: '6px',
+                    p: '2px 8px',
+                },
             },
         },
         FormLabel: {
@@ -250,6 +270,10 @@ export const theme = extendTheme({
                 fontWeight: 600,
                 lineHeight: '143%',
                 padding: { base: '4px 8px', lg: '6px 12px' },
+                _hover: {
+                    borderColor: 'brand.600',
+                    bg: 'transparent',
+                },
             },
             variants: {
                 buttonSolidSmall: {
@@ -267,6 +291,16 @@ export const theme = extendTheme({
                     borderColor: 'blackAlpha.500',
                     height: { base: '24px', lg: '32px' },
                     minWidth: { base: '24px', lg: '32px' },
+                },
+                buttonRemoveFilter: {
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    color: 'brand.700',
+                    bg: 'brand.100',
+                    borderWidth: '1px',
+                    borderColor: 'brand.400',
+                    _hover: { bg: 'brand.400', border: 'none' },
+                    height: '24px',
                 },
                 buttonTextSmallest: {
                     fontSize: '12px',
@@ -290,6 +324,37 @@ export const theme = extendTheme({
                     bg: 'brand.400',
                     h: { base: '24px', lg: '32px', xl: '48px' },
                 },
+                buttonBlackBig: {
+                    fontSize: { base: '14px', lg: '18px' },
+                    fontWeight: 600,
+                    lineHeight: '156%',
+                    color: 'white',
+                    padding: '0 24px',
+                    borderWidth: '1px',
+                    borderColor: 'blackAlpha.600',
+                    borderRadius: '6px',
+                    h: { base: '32px', xl: '48px' },
+                    _hover: { bg: 'brand.600', border: 'none' },
+                    bg: 'black',
+                },
+                buttonOutlineBiggest: {
+                    fontSize: { base: '14px', lg: '18px' },
+                    fontWeight: 600,
+                    lineHeight: '156%',
+                    color: 'blackAlpha.800',
+                    padding: '0 24px',
+                    borderWidth: '1px',
+                    borderColor: 'blackAlpha.600',
+                    borderRadius: '6px',
+                    h: { base: '32px', xl: '48px' },
+                    _hover: { bg: 'brand.150', border: 'none' },
+                },
+                buttonAdd: {
+                    h: '24px',
+                    maxH: '24px',
+                    w: '24px',
+                    maxW: '24px',
+                },
             },
         },
         IconButton: {
@@ -311,6 +376,45 @@ export const theme = extendTheme({
                 as: 'nav',
                 flexGrow: 1,
                 spacing: '8px',
+            },
+        },
+        Switch: {
+            baseStyle: {
+                thumb: {
+                    bg: 'white',
+                },
+                track: {
+                    bg: 'blackAlpha.300',
+                    _checked: {
+                        bg: 'brand.400',
+                    },
+                },
+            },
+        },
+        Checkbox: {
+            baseStyle: {
+                control: {
+                    borderColor: 'brand.150',
+                    _checked: {
+                        bg: 'brand.400',
+                        borderColor: 'brand.400',
+                        _hover: {
+                            bg: 'brand.400',
+                            borderColor: 'brand.400',
+                        },
+                    },
+                    _hover: {
+                        bg: 'brand.400',
+                        borderColor: 'brand.400',
+                    },
+                },
+                icon: {
+                    color: 'black',
+                    _hover: {
+                        bg: 'brand.400',
+                        borderColor: 'brand.400',
+                    },
+                },
             },
         },
     },

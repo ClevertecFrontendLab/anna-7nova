@@ -2,6 +2,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import { useNavigate } from 'react-router';
 
+import { AppRoutesPropsType } from '~/app/router/AppRoutes';
 import { MockDataSliderType } from '~/components/commonComponents/CategoryData';
 import { TitleSectionMain } from '~/components/commonComponents/TitleSectionMain';
 import { TheJuiciestBlock } from '~/components/layouts/sections/blocks/TheJuiciestBlock';
@@ -21,14 +22,24 @@ import {
 } from '../components/styles/Section.style';
 import mock from '../mocks/mock.json';
 
-export const MainSection: React.FC = () => {
+export const MainSection: React.FC<AppRoutesPropsType> = ({
+    onFilterBtnClick,
+    filterCheckboxHandle,
+    filter,
+    addItemsAllergens,
+}: AppRoutesPropsType) => {
     const navigate = useNavigate();
     const mockData = mock as Array<MockDataSliderType>;
     return (
         <>
             <Box sx={boxTitleAndSearchPrimary}>
                 <TitleSectionMain />
-                <SearchSection />
+                <SearchSection
+                    addItemsAllergens={addItemsAllergens}
+                    onFilterBtnClick={onFilterBtnClick}
+                    filterCheckboxHandle={filterCheckboxHandle}
+                    filter={filter}
+                />
             </Box>
             <Box w='100%' h='100%' maxH='100%'>
                 <TitleSection title='Новые рецепты ' />

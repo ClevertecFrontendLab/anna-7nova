@@ -4,6 +4,7 @@ export const accordionItemStyle = {
     m: '0 10px',
     border: 'none',
     p: '0',
+    w: '100%',
 };
 export const accordionButtonStyle = {
     _hover: { bg: 'brand.150' },
@@ -30,6 +31,30 @@ export const accordionLink = {
     textStyle: '16px',
     _hover: { color: 'black', outline: 'none' },
     borderColor: 'brand.300',
+};
+
+//Custom input
+export const customIconButton = {
+    _hover: { bg: 'white', border: 'brand.400', borderColor: 'brand.400' },
+    _expanded: { borderColor: 'brand.150', fontWeight: '700' },
+    _selected: { borderColor: 'blackAlpha.100' },
+    _focused: { borderColor: 'blackAlpha.100', outline: 'none', boxShadow: 'none' },
+    justifyContent: 'space-between',
+    border: '1px solid rgba(0, 0, 0, 0.08)',
+    outline: 'none',
+    borderRadius: '6px',
+    width: '100%',
+    minHeight: '40px',
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    zIndex: 6,
+};
+
+export const customIconItemStyle = {
+    position: 'relative',
+    border: 'none',
+    p: '0',
+    w: '100%',
 };
 
 //stickers

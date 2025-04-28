@@ -17,17 +17,22 @@ import UserSettings from './UserSettings';
 type AsidePropsType = {
     onClick: (categorySlug: string, subcategorySlug?: string) => void;
     menuIsOpen: boolean;
+    onBurgerBtnClick: () => void;
 };
 
-export const Aside: React.FC<AsidePropsType> = ({ onClick, menuIsOpen }: AsidePropsType) => (
+export const Aside: React.FC<AsidePropsType> = ({
+    onClick,
+    menuIsOpen,
+    onBurgerBtnClick,
+}: AsidePropsType) => (
     <>
         <Box as='aside' sx={navDesktopContainer}>
             <NavigationMenuDesktop onClick={onClick} />
             <UserSettings />
         </Box>
         {menuIsOpen && (
-            <Box as='aside' sx={navMobileBlur}>
-                <Box sx={navMobileContainer}>
+            <Box as='aside' sx={navMobileBlur} onClick={onBurgerBtnClick}>
+                <Box sx={navMobileContainer} onClick={(e) => e.stopPropagation()}>
                     <Box p='16px 20px 12px'>
                         <NavMenu />
                     </Box>

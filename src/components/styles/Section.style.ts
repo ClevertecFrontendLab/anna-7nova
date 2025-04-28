@@ -34,7 +34,8 @@ export const boxMobileVisibleAbsolute = {
     display: ['flex', 'flex', 'none', 'none', 'none'],
     justifyContent: 'space-between',
     position: 'absolute',
-    w: '100%',
+    w: { base: '158px', lg: '346px' },
+    minW: { base: '158px', lg: '346px' },
     p: '8px',
 };
 
@@ -116,6 +117,14 @@ export const formControl = {
     justifyContent: 'space-between',
     m: '16px 0 0',
 };
+export const formControlFilter = {
+    display: 'flex',
+    flexWrap: 'wrap',
+    w: '100%',
+    alignItems: 'center',
+    justifyContent: 'start',
+    m: '16px 0 0',
+};
 
 //Flex
 export const flexRowStartCenter = {
@@ -133,7 +142,7 @@ export const flexRowBetweenEnd = {
 export const flexRowBetweenCenterWrap = {
     justifyContent: 'space-between',
     alignItems: 'center',
-    wrap: 'wrap',
+    flexWrap: 'wrap',
 };
 export const flexRowBetweenEndWrap = {
     justifyContent: 'space-between',
@@ -145,6 +154,11 @@ export const flexRowBetweenStartWrap = {
     justifyContent: 'space-between',
     alignItems: 'start',
     wrap: 'wrap',
+};
+export const flexRowStartWrap = {
+    justifyContent: 'start',
+    alignItems: 'start',
+    flexWrap: 'wrap',
 };
 export const flexColBetweenStartWrap = {
     h: '100%',
@@ -286,6 +300,7 @@ export const newRecipesCard = {
 };
 
 export const newRecipesCardImage = {
+    position: 'relative',
     objectFit: 'cover',
     borderRadius: '8px 8px 0 0 ',
     maxW: '100%',
@@ -419,6 +434,43 @@ export const navMobileContainer = {
         background: 'blackAlpha.300',
     },
 };
+//Navigation filter
+export const navFilter = {
+    display: 'block',
+    position: 'fixed',
+    backdropFilter: 'blur(4px)',
+    bg: 'rgba(0, 0, 0, 0.16)',
+    h: '100%',
+    w: '100%',
+    top: '0',
+    zIndex: 6,
+    left: 0,
+};
+export const navFilterContainer = {
+    position: 'absolute',
+    zIndex: 7,
+    top: '0',
+    right: '8px',
+    w: { base: '100%', sm: '463px' },
+    h: '100%',
+    p: '48px 32px 32px',
+    bgColor: 'white',
+    overflowY: 'scroll',
+    '&::-webkit-scrollbar': {
+        width: '8px',
+        mr: '20px',
+    },
+    '&::-webkit-scrollbar-track': {
+        background: 'blackAlpha.50',
+    },
+    '&::-webkit-scrollbar-thumb': {
+        background: 'blackAlpha.300',
+        borderRadius: '8px',
+    },
+    '&::-webkit-scrollbar-thumb:hover': {
+        background: 'blackAlpha.300',
+    },
+};
 //CaloricContent
 export const containerRecipeFull = {
     w: { base: '100%', lg: '578px', xl: '668px' },
@@ -440,4 +492,16 @@ export const recipeCardStack = {
     p: { base: '8px', md: '20px 24px' },
     w: '100%',
     gap: { base: '12px', md: '16px' },
+};
+export const inputCustomElement = {
+    h: '32px',
+    w: '100%',
+    p: '6px 12px',
+    '::placeholder': {
+        color: 'brand.800',
+        opacity: 1,
+        fontWeight: 400,
+        fontSize: '14px',
+        lineHeight: '143%',
+    },
 };
